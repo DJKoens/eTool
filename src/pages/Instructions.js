@@ -1,32 +1,105 @@
-import phaseButton from '../media/phaseButton.png';
-import activityButton from '../media/activityButton.png';
-import stepButton from '../media/stepButton.png';
-import checklistButton from '../media/checklistButton.png';
 import './Instructions.css';
 
 const Instructions = () => {
     return (
         <div className="instructionContent">
-            <h2>Instructions</h2>
-            <p>
-                To start using the tool, navigate to the 'Tool' Button at the top. The general introduction will give you more information about the tool
-                and you can choose between the various different phases to continue. To select a phase, click one of the phase buttons: 
+            <h2>Instructions for using the tool</h2>
+            <p><strong>It is important to keep in mind that this tool provides the ideal pathway for development and implementation of an NEDL. 
+                Countries can always decide to deviate from or amend the Activities to fit country-specific context and customs.</strong>
             </p>
-            <img src={phaseButton}/>
+            <h3>Sections of the tool</h3>
             <p>
-                After selecting the phase, you can read all about it and see the different activities that are part of that phase.
-                Once you have read the phase introduction, select one of the activities to continue. The activity button looks like this:
+                The main component of this tool is the stepwise NEDL development and implementation roadmap. 
+                In addition, this tool provides a section with instructions on how to use the tool (this section), 
+                a glossary of terms used throughout the tool, and a further reading section with links to literature and guidelines for additional information on NEDL development and implementation.
             </p>
-            <img src={activityButton} />
+            <h3>Stepwise NEDL development and implementation roadmap</h3>
             <p>
-                Once you have selected an activity, you will see what the aim of the activity is and what the activity is all about.
-                Furthermore you can see that every activity contains multiple different steps that are required to complete the activity. To see these steps,
-                press one of the step buttons:
+                The stepwise NEDL development and implementation roadmap is divided into six Phases. 
+                Each Phase consists of one or more Activities. Each Activity consists of one or more Steps.
             </p>
-            <img src={stepButton} />
             <p>
-                Finally, you can check that all the steps of the activity are completed by filling in the checklist that can be found next to the different steps.
-                Once the checklist is complete, you can click the 'Next' button to move along to the next activity or phase.
+                <strong>Step 1: Click on the roadmap to go to a specific Phase. </strong>
+                @@insert screenshot roadmap with a pointer clicking on the Phase 1 button.
+            </p>
+            <p>
+                Each Phase has the same outline: it starts with an introduction that gives an overview of the whole Phase. 
+                Activity buttons are provided directly under the title of the Phase to go to specific Activities in the Phase. 
+                After clicking on the Phase button, you are directly led to the first Activity of that Phase. 
+                If you'd like to go to another Activity in this Phase, click on that Activity button.
+            </p>
+            <p>
+                <strong>Step 2: Click on one of the Activity buttons. </strong>
+            </p>
+            <p>
+                Below the Activity buttons an introduction describes the purpose and output of the Phase, 
+                and the Activities included in the Phase that lead to this output. 
+                A glossary of terms used in the Phase is also provided. This is followed by series of Step buttons that lead to specific Steps of an Activity. 
+                @@insert screenshot of outline of Phase
+            </p>
+            <p>
+                <strong>Step 3: Click on a Step button. </strong>
+            </p>
+            <p>
+                Each Step has the same outline: a one-sentence description of the aim of the Step, the entity responsible for implementation of the Step, 
+                and a description of what needs to be done in the Step. On the right-hand side are links to templates of documents or other information sources required to implement the Step.
+                @@insert screenshot of a Step
+            </p>
+            <p>
+                Go to the next Step once the current Step has been implemented. 
+                Either at the end of each Step or when all the Steps of an Activity have been implemented:
+            </p>
+            <p>
+                <strong>Step 4: Click on the checklist button </strong>
+            </p>
+            <p>
+                 The tool provides checklist questions to verify correct and complete implementation of all the Steps of each Activity. 
+                 Progress can be monitored by ticking checklist questions. The Phase button turns green based on the number of checklist questions ticked.
+                @@insert screenshot of checklist questions and of Phase button turning green
+            </p>
+            <p>
+                When all the Steps of a certain Activity have been completed and the checklist questions have been answered, 
+                go to the next Activity by clicking the button of the next Activity (hence, repeat from Step 2). 
+            </p>
+            <p>
+                When all the Activities of a certain Phase have been completed and all the checklist questions have been answered, 
+                the Phase button will have turned completely green.
+                Go to the next Phase by clicking the button of the next Phase. Hence, repeat from Step 1.
+            </p>
+            <p>
+                @@insert screenshot of roadmap with one or two completely green Phase buttons
+
+                Sometimes Activities will take more time, but you can still decide to continue with the next Activity/-ies. 
+                Also, sometimes Phases (2A and 2B) or Activities (in Phase 5) can be performed in parallel. 
+            </p>
+            <h3>Additional features</h3>
+            <p>
+                This tool contains some additional features aside from the stepwise NEDL development and implementation roadmap.
+            </p>
+            <h3>Search feature for resources</h3>
+            <p>
+                This tool contains a search function that helps to find specific templates of documents and other resources. To use this, 
+                insert a keyword in the search box and click on the search icon. The search function will only work when you are online.
+                @@screenshot of search box.
+            </p>
+            <h3>Abbreviations</h3>
+            <p>
+                When hovering over abbreviations in the text, the full meaning of the abbreviation will appear.
+            </p>
+            <h3>Glossary</h3>
+            <p>
+                This section explains the terms used throughout the tool.
+
+                @@screenshot of glossary
+            </p>
+            <h3>Further reading</h3>
+            <p>
+                Whereas links to resources directly required for implementation of a specific Activity are provided next to each Activity, this section contains links to resources that provide additional background information on development, implementation, review, and revision of an NEDL.
+                @@screenshot of further reading section
+            </p>
+            <h3>Acknowledgements</h3>
+            <p>
+                This section acknowledges the contributions of the funders, developers, and reviewers of the tool.
             </p>
         </div>
     );

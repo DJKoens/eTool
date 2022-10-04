@@ -101,7 +101,7 @@ const ToolStart = () => {
                                 {phase.activitiesCollection.items.filter(a => a.id == activity).map((activity) => (
                                     <div>
                                         <h2>{activity.name}: {activity.subTitle}</h2>
-                                        <h3>Aim: </h3>
+                                        <h3>Aim2: </h3>
                                         <p>{activity.aim.json.content.map((aim) => (
                                             <RichTextRecursive {...aim} />
                                         ))}</p>

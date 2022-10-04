@@ -16,6 +16,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<ToolIntro />} />
+            <Route path="/eTool" element={<ToolIntro />} />
             <Route path="/instructions" element={<Instructions />} />
             <Route path="/tool" element={<ToolIntro />} />
             <Route path="/tool/phase/:phaseId/activity/:activityId/step/:stepId" element={<ToolStart />} />
