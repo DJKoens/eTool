@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/eTool/static/css/main.022a3eaf.css",
+    "main.js": "/eTool/static/js/main.4444bd6b.js",
+    "index.html": "/eTool/index.html",
+    "main.022a3eaf.css.map": "/eTool/static/css/main.022a3eaf.css.map",
+    "main.4444bd6b.js.map": "/eTool/static/js/main.4444bd6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.022a3eaf.css",
+    "static/js/main.4444bd6b.js"
+  ]
+}
