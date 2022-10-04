@@ -1,0 +1,356 @@
+{
+    "phases":[
+        {
+            "id": 1,
+            "activities": [
+                {
+                    "id": 1,
+                    "name": "Activity 1.1",
+                    "aim": "Establishment of an expert committee responsible for coordinating and driving the development, implementation, periodic review and improvement of the NEDL.",
+                    "description": "The NEDC is responsible for the development, implementation, periodic review and improvement of the NEDL on behalf of the government. The NEDC membership consists ideally of 20-25 experts who will serve as representative stakeholders of the diagnostic testing community and laboratory system in the country. The NEDC is assisted by a larger number of experts and expert groups which will responsible for corresponding activities in the NEDL development and implementation process (see activity 1.3).",
+                    "steps": [
+                        {
+                            "id": "1.1.1",
+                            "title": "Formulate the Terms of Reference (ToR) of the NEDC",
+                            "responsible": "Ministry of Health, Directorate of Diagnostic Services (or similar agency)",
+                            "information": "Below are the suggested ToR for the NEDC. These should be amended by the country to reflect the country-specific requirements of the NEDL development process and policy and planning cascade.\n\nThe NEDC is tasked by the government to:\n- Provide advice and expertise to the government on diagnostic services.\n- Collect and analyze data to obtain insight in disease prevalence and develop and regularly update a prioritized list of diseases that serves as basis for development and revision of the NEDL.\n- Develop, finalize, and periodically review and update the NEDL for endorsement by the government.\n- Seek advice from, and try to reach consensus with, the community of stakeholders of the diagnostic services on the draft versions of the NEDL.\n- Provide support to the development and implementation of an implementation plan for the NEDL.\n- Provide support to the development of a strategic plan and improvement plan for reinforcement of the laboratory services.\n- Provide regular progress reports to the Ministry of Health and partners, if required.\n- Actively explain and promote the importance of quality diagnostic services in the country and the role the NEDL can play in this.\nAmend the ToR of the NEDC to accommodate country-specific requirements.\n\nThe members of the NEDC will appoint a Chairperson and Executive Secretary from within the group (link to step 1.1.4)."
+                        },
+                        {
+                            "id": "1.1.2",
+                            "title": "Determine the required composition of the NEDC",
+                            "responsible": "Ministry of Health, Directorate of Diagnostic Services (or similar)",
+                            "information": "The NEDC should consist of 20-25 members which together form a representative cross-section of the country’s health system and diagnostic services. The NEDC should not be too small to allow interactive discussions between experts coming from different backgrounds, nor should it be bigger than 25 persons to maintain flexibility and efficiency in its operation. When larger stakeholder consultations are required additional experts and stakeholders can be invited to hearings (link to activity @@) and consultation meetings (link to activity @@).\nSuggested agency representation in the NEDC:\n- Ministry of Health (incl. representatives of both laboratory and imaging services).\n- Laboratory services experts, incl. laboratory managers of national (reference) laboratories and all other tiers of the laboratory network.\n- National laboratory associations or societies.\n- Health services experts, incl. representatives of imaging services.\n- Health finance experts representing the Ministry of Finance.\n- Epidemiologists.\n- Medical doctors representing different tiers of the health system.\n- Pharmacists\n- National regulatory authorities\n\nSuggested additional groups:\n- Ministry of Education\n\nSupport staff should be appointed to take care of administrative processes and logistics for NEDL meetings. They will fall under the Executive Secretary (link to step 1.1.4)\n\nExpert groups will be appointed for specific activities (link to activity 1.3). Expert group members are not necessarily members of the NEDC but are chosen based on their expertise. At least one of the members of each expert group should also be part of the NEDC and can serve as the chairperson and/or rapporteur of the expert group.\n\nInternational technical and funding partners can be added as observers but should ideally not be appointed as full members of the NEDC as the development of the NEDL should be a country-driven process to ensure suitability, commitment and sustainability."
+                        },
+                        {
+                            "id": "1.1.3",
+                            "title": "Invite members",
+                            "responsible": "Ministry of Health, Directorate of Diagnostic Services (or similar)",
+                            "information": "Once potential members of the NEDC have been identified they should be formally invited and officially mandated (link to step 1.1.5)  by the Ministry of Health. Their participation in the NEDC should be agreed with their employer to guarantee availability as their level of effort and investment of time required for the NEDL development process will be considerable. "
+                        },
+                        {
+                            "id": "1.1.4",
+                            "title": "Assign roles and responsibilities",
+                            "responsible": "Ministry of Health, Directorate of Diagnostic Services (or similar)",
+                            "information": "The NEDC includes the following positions:\n- Chairperson\nThe chairperson is responsible for overall coordination of the process of development, finalization, and periodic review and update of the NEDL. The chairperson has the following responsibilities:\na. Appoint expert groups and coordinate their input (link to activity 1.2).\nb. Ensure that all NEDC members are familiar with documentation to prepare an NEDL (link to step 1.3.1).\nc. Prepare a SMART operational plan for development of the NEDL (link to activity 1.3.2).\nd. Chair NEDL meetings.\ne. Provide progress reports (link to step 1.3.4).\n- Executive secretary\nThe executive secretary is responsible for drafting and distributing meeting minutes, progress reports and preparing the NEDL draft and final versions, and any other documents and records as required. S/he is also responsible for the organization of the NEDC meetings by the support staff.\n- Members\nNEDC members are responsible for implementing and providing relevant input to the various activities for development and periodic review and update of the NEDL."
+                        },
+                        {
+                            "id": "1.1.5",
+                            "title": "Formally mandate the NEDC and its members",
+                            "responsible": "Ministry of Health, Directorate of Diagnostic Services (or similar)",
+                            "information": "Once formed, the NEDC and its members have to be formally mandated by the Ministry of Health to ensure that the NEDC has the appropriate authority to fulfil its duties on behalf of the government. In-country procedures should be followed. "
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "1.1.1",
+                            "questions": [
+                                "Have Terms of Reference been formulated for the NEDC?"
+                            ]
+                        },
+                        {
+                            "step": "1.1.2",
+                            "questions": [
+                                "Have 20-25 experts been identified to be invited for the NEDC?",
+                                "Do the experts to be invited for the NEDC form a representative cross-section of the country's health system and diagnostic services?",
+                                "Are the following entities as a minimum represented in the NEDC:\nMinistry of Health (incl. representatives of both laboratory and imaging services).\nLaboratory services experts, incl. laboratory managers of national (reference) laboratories and all other tiers of the laboratory network.\nNational laboratory associations or societies.\nHealth services experts, incl. representatives of imaging services.\nHealth finance experts representing the Ministry of Finance.\nEpidemiologists.\nMedical doctors representing different tiers of the health system.\nPharmacists\nNational Regulatory Authorities",
+                                "Have support staff responsible for administrative processes and logistics for NEDL meetings been appointed?"
+                            ]
+                        },
+                        {
+                            "step": "1.1.3",
+                            "questions": [
+                                "Have potential members of the NEDC been formally invited and officially mandated by the Ministry of Health?",
+                                "Has participation of NEDC members been agreed with their employer to guarantee their availability?"
+                            ]
+                        },
+                        {
+                            "step": "1.1.4",
+                            "questions": [
+                                "Have the following positions within the NEDC been appointed with clear indication of their roles and responsibilities?\nChairperson\nExecutive secretary\nMembers"
+                            ]
+                        },
+                        {
+                            "step": "1.1.5",
+                            "questions": [
+                                "Have the NEDC and its members been formally mandated by the Ministry of Health?"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Activity 1.2",
+                    "aim": "Establishment of expert technical working groups that will support the NEDC on specific issues.",
+                    "description": "The NEDC will be assisted/supported by various expert groups for implementation of different activities for development, finalization, periodic review and update of the NEDL (see organogram).  Not all members of the expert groups are also member of the NEDC. ",
+                    "steps": [
+                        {
+                            "id": "1.2.1",
+                            "title": "step 1.2.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.2.2",
+                            "title": "step 1.2.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.2.3",
+                            "title": "step 1.2.3",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.2.4",
+                            "title": "step 1.2.4",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Activity 1.3",
+                    "aim": "To plan activities, including budget and time allocation, for the development of the NEDL up to phase 4.",
+                    "description": "A clear planning is needed to ensure timely and adequate implementation of the various activities for development and finalization of the NEDL. This plan should be costed to obtain the required budget for development of the NEDL up to phase 4. A SMART action plan will also help the members to harmonize their agendas with the various NEDC and expert group activities. ",
+                    "steps": [
+                        {
+                            "id": "1.3.1",
+                            "title": "step 1.3.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.3.2",
+                            "title": "step 1.3.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.3.3",
+                            "title": "step 1.3.3",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.3.4",
+                            "title": "step 1.3.4",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "1.3.5",
+                            "title": "step 1.3.5",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "activities": [
+                {
+                    "id": 1,
+                    "name":"Activity 2A.1",
+                    "aim": "Obtain country-specific disease prevalence data from different literature sources to guide the development of the NEDL",
+                    "description": "The desk review entails identifying and studying literature related to the prevalence of diseases in a country. This desk review concentrates on three different types of sources:\n1.\tScientific literature related to disease prevalence and burden in the country.\n2.\tPublications and platforms on the national, regional and global burden of disease (GBD).\n3.\tGrey literature in the form of reports from the country or the region.",
+                    "steps": [
+                        {
+                            "id": "2A.1.1",
+                            "title": "step 2A.1.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.1.2",
+                            "title": "step 2A.1.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.1.3",
+                            "title": "step 2A.1.3",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.1.4",
+                            "title": "step 2A.1.4",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.1.5",
+                            "title": "step 2A.1.5",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name":"Activity 2A.2",
+                    "aim": "Identify and analyze disease prevalence data based on available databases and records",
+                    "description": "As described above, disease prevalence data are the most reliable source of information when designing the NEDL as they will have the largest contribution to improving patient care by improving access to diagnostic testing. Disease prevalence data are captured in documents and records and ideally consolidated in national (electronic) databases.",
+                    "steps": [
+                        {
+                            "id": "2A.2.1",
+                            "title": "step 2A.2.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.2.2",
+                            "title": "step 2A.2.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.2.3",
+                            "title": "step 2A.2.3",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name":"Activity 2A.3",
+                    "aim": "To establish a prioritized list of diseases and conditions for which IVDs and/or imaging is required as perceived by medical doctors.",
+                    "description": "Medical doctors working in routine patient care are the best source of information for estimating the prevalence of diseases and conditions in the country. As different disease patterns are seen at different tiers of the health system, it is important to include medical doctors working at all tiers as well as in the private sector. Their combined experience should lead to one list of prioritized diseases and conditions, based on (perceived) prevalence, for which IVDs and/or imaging is required. This list will be created through structured group discussions with medical doctors.",
+                    "steps": [
+                        {
+                            "id": "2A.3.1",
+                            "title": "step 2A.3.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.3.2",
+                            "title": "step 2A.3.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.3.3",
+                            "title": "step 2A.3.3",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.3.4",
+                            "title": "step 2A.3.4",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.3.5",
+                            "title": "step 2A.3.5",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.3.6",
+                            "title": "step 2A.3.6",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name":"Activity 2A.4",
+                    "aim": "To prepare a final list of priority diseases and conditions that will serve as the basis for the development of the NEDL",
+                    "description": "The reports of the desk review, rapid assessment and the consolidated report of the group discussions together provide the information-base for the NEDC to prepare the final list of priority diseases and conditions that will be used to formulate the NEDL.",
+                    "steps": [
+                        {
+                            "id": "2A.4.1",
+                            "title": "step 2A.4.1",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.4.2",
+                            "title": "step 2A.4.2",
+                            "responsible": "",
+                            "information": ""
+                        },
+                        {
+                            "id": "2A.4.3",
+                            "title": "step 2A.4.3",
+                            "responsible": "",
+                            "information": ""
+                        }
+                    ],
+                    "checklist": [
+                        {
+                            "step": "",
+                            "questions": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "activities": []
+        },
+        {
+            "id": 4,
+            "activities": []
+        },
+        {
+            "id": 5,
+            "activities": []
+        },
+        {
+            "id": 6,
+            "activities": []
+        }
+    ]
+}

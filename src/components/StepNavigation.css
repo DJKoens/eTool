@@ -1,0 +1,53 @@
+.stepBarItem a{
+    border: 1px solid white;
+    width: 100%;
+    font-size: large;
+    text-decoration: none;
+    padding: 10px 50px;
+    color: white;
+    text-align: center;
+    background-color: #2f4050;
+}
+
+.stepBarItem {
+     width: 100%;
+     margin: 10px 0;
+}
+
+.stepBarItem a:hover {
+    box-shadow: 2px 4px 6px rgba(50, 50, 50, 0.1);
+    background-color: orange;
+}
+
+.stepBarItem .active {
+    background-color: orange;
+}
+
+.stepBarChecklist{
+    border: 1px solid white;
+    width: 100%;
+    font-size: large;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: #2f4050;
+}
+
+.stepBarChecklist .active {
+    background-color: orange;
+}
+
+.stepBarChecklist:hover {
+    box-shadow: 2px 4px 6px rgba(50, 50, 50, 0.1);
+    background-color: orange;
+}
+
+.stepNavigation {
+    display: flex;
+    justify-content: center;
+}
+
+.resources {
+    display: flex;
+}

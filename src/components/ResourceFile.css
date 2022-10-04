@@ -1,0 +1,17 @@
+.resFile {
+    display: flex;
+}
+
+.resFile img {
+    vertical-align: middle;
+    max-height: 48px;
+    max-width: 48px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-right: 5px
+}
+
+.resFile a {
+    padding-right: 30px;
+    padding-top: 20px;
+}

@@ -1,0 +1,13 @@
+.App {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+    vertical-align: bottom;
+}
+
+.content {
+    height: 88%;
+    margin: 0;
+    padding: 0;
+}

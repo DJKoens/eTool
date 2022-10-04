@@ -1,0 +1,18 @@
+.startContent {
+    /* padding: 0 300px; */
+    width: 1200px;
+    /* margin: 10px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toolStartPhase {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.subTitle {
+    text-align: center;
+    margin: 0;
+}

@@ -1,0 +1,24 @@
+.activityNavigation a {
+    text-decoration: none;
+    color: white;
+    width: 15%;
+    text-align: center;
+    margin: 0 40px;
+    padding: 8px 20px;
+    background-color: #2f4050;
+}
+
+.activityNavigation a:hover {
+    box-shadow: 2px 4px 6px rgba(50, 50, 50, 0.1);
+    background-color: orange;
+}
+
+.activityNavigation {
+    display: flex;
+    justify-content: center;
+    margin: 16px;
+}
+
+.activityNavigation .active {
+    background-color: orange;
+}

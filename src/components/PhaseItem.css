@@ -1,0 +1,13 @@
+.phase {
+    border: 2px solid black;
+    padding: 2px 50px;
+    margin: 10px 30px;
+    font-size: large;
+    border-radius: 24px;
+    background: rgb(255, 65, 65);
+}
+
+.phase:hover {
+    box-shadow: 2px 4px 6px rgba(50, 50, 50, 0.1);
+    color: white;
+}

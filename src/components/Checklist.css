@@ -1,0 +1,26 @@
+form input {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+}
+
+form label {
+    display: block;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    text-indent: -15px;
+}
+
+form input[type="submit"] {
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    font-size: x-large;
+}
+
+.checks h3 {
+    margin: 12px 0;
+}
