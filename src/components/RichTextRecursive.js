@@ -10,22 +10,22 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
     return (
         <>
         {nodeType === "unordered-list" && <ul>
-            {content.map((newComponent) => (
-                <RichTextRecursive {...newComponent}/>
+            {content.map((newComponent, index) => (
+                <RichTextRecursive {...newComponent} key={index}/>
             ))}
         </ul> }
-        {nodeType === "list-item" && content.map((newComponent) => (
-            <li><RichTextRecursive {...newComponent}/></li>
+        {nodeType === "list-item" && content.map((newComponent, index) => (
+            <li key={index}><RichTextRecursive {...newComponent}/></li>
         ))}
         {nodeType === "paragraph" && <p>
-            {content.map((newComponent) => (
-                <RichTextRecursive {...newComponent} />
+            {content.map((newComponent, index) => (
+                <RichTextRecursive {...newComponent} key={index} />
             ))}
         </p> }
         {nodeType === "text" && value && <>{value}</>}
-        {nodeType === "entry-hyperlink" && content.map((newComponent) => (
+        {nodeType === "entry-hyperlink" && content.map((newComponent, index) => (
             //eslint-disable-next-line
-            <a href="" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}><RichTextRecursive {...newComponent} /></a>
+            <a key={index} href="" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}><RichTextRecursive {...newComponent} /></a>
         ))}
         {nodeType === "embedded-entry-inline" && <InlineContent id={data.target.sys.id} newComponent={content} />}
         {nodeType === "embedded-asset-block" && <InlineAsset id={data.target.sys.id} newComponent={content} />}

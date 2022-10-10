@@ -1,6 +1,5 @@
 import './ToolStart.css';
 import PhaseStartItem from '../components/PhaseStartItem';
-import StepContent from '../components/StepContent';
 import Glossary from '../components/Glossary';
 import ActivityNavigation from '../components/ActivityNavigation';
 import useContent from '../useContent.js';
@@ -64,7 +63,7 @@ const ToolStart = () => {
     const {content, isPending, error} = useContent(query);
 
     const handleActivity = (newActivity) => {
-        setActivity(newActivity)
+        setActivity(newActivity);
     }
 
     return (
@@ -83,31 +82,39 @@ const ToolStart = () => {
                     </div>
 
                     {content.data.phaseCollection.items.filter(phase => phase.phaseId == phaseId).map((phase) => (
-                        <div className="introGloss">
+                        <div className="introGloss" key={phase.phaseId}>
                             <h2 className='CardContainer subTitle'>{phase.subTitle}</h2>
                             <ActivityNavigation phase={phaseId} activities={phase.activitiesCollection.items} activityHandler={handleActivity}/>
+                            {(phaseId == 2 || phaseId == 7) && <div>
+                                {/* Place an extra activity navigation item when there is a subphase needed */}
+                                {content.data.phaseCollection.items.filter(phase => phase.phaseId == ((phaseId == 2) ? 7 : 2)).map((subPhase) => (
+                                    <ActivityNavigation key={subPhase.phaseId} phase={subPhase.phaseId} activities={subPhase.activitiesCollection.items} activityHandler={handleActivity} />
+                                ))}
+                            </div>}
                             <hr />
                             {/* Check if there is an activity selected, if so show the activity information. Otherwise show the Phase information */}
                             {activity == 0 && <div>
                                 <h3>General introduction:</h3>
                                 <div>
-                                    {phase.generalIntroduction.json.content.map((item) => (
-                                        <RichTextRecursive {...item} />
+                                    {phase.generalIntroduction.json.content.map((item, index) => (
+                                        <RichTextRecursive {...item} key={index} />
                                     ))}
                                 </div>
+                                <hr />
+                                <h3>Glossary</h3>
                                 <Glossary glossaryItems={phase.glossaryCollection.items} />
                             </div>}
                             {activity != 0 && <div>
                                 {phase.activitiesCollection.items.filter(a => a.id == activity).map((activity) => (
-                                    <div>
+                                    <div key={activity.id}>
                                         <h2>{activity.name}: {activity.subTitle}</h2>
-                                        <h3>Aim2: </h3>
-                                        <p>{activity.aim.json.content.map((aim) => (
-                                            <RichTextRecursive {...aim} />
+                                        <h3>Aim: </h3>
+                                        <p>{activity.aim.json.content.map((aim, index) => (
+                                            <RichTextRecursive {...aim} key={index}/>
                                         ))}</p>
                                         <h3>Description: </h3>
-                                        <p>{activity.description.json.content.map((description) => (
-                                            <RichTextRecursive {...description} />
+                                        <p>{activity.description.json.content.map((description, index) => (
+                                            <RichTextRecursive {...description} key={index}/>
                                         ))}</p>
 
                                         <StepNavigationBar steps={activity.stepsCollection.items} phase={phase.phaseId} activity={activity.id} />

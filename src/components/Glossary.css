@@ -16,3 +16,25 @@ span {
 .glossary p {
     display: inline;
 }
+
+.glossary table {
+    border: 1px solid gray;
+}
+
+.glossary td {
+    border: 1px solid gray;
+    padding: 2px 8px;
+}
+
+.glossary th {
+    border: 1px solid gray;
+    font-size: larger;
+    padding: 12px 0;
+    background-color: #2f4050;
+    color: white;
+    font-weight: normal;
+}
+
+.glossary {
+    padding-bottom: 20px;
+}

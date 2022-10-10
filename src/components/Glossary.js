@@ -4,13 +4,26 @@ import RichTextRecursive from './RichTextRecursive';
 const Glossary = ({glossaryItems}) => {
     return (
         <div className="glossary">
-            <h3>Glossary</h3>
-            <hr />
-            {glossaryItems && glossaryItems.map((item) => (
-                <p><strong>{item.glossaryItem}</strong> - {item.info.json.content.map((infoItem) => (
-                    <RichTextRecursive {...infoItem} />
-                ))}<br/><hr/></p>
-            ))}
+            <table>
+                <thead>
+                <tr>
+                    <th>Definition</th>
+                    <th>Meaning</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {glossaryItems && glossaryItems.map((item) => (
+                        <tr key={item.glossaryItem}>
+                            <td>{item.glossaryItem}</td>
+                            <td>
+                                {item.info.json.content.map((infoItem, index) => (
+                                    <RichTextRecursive {...infoItem} key={index} />
+                                ))}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }

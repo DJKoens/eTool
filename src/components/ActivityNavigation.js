@@ -4,6 +4,13 @@ import './ActivityNavigation.css';
 const ActivityNavigation = ({phase, activities, activityHandler}) => {
     return (
         <div className="activityNavigation">
+            {(phase == 2 || phase == 7) && <NavLink to={`/tool/phase/${phase}/activity/0/step/0`} style={
+                ({isActive}) => {
+                    return {
+                        backgroundColor: isActive ? 'orange' : 'darkBlue'
+                    }
+                }
+            } onClick={() => activityHandler(0)}>{(phase == 2) ? "Phase 2A" : "Phase 2B"}</NavLink>}
             {activities.map((activity) => (
                 <NavLink to={`/tool/phase/${phase}/activity/${activity.id}/step/0`} style={
                     ({isActive}) => {
@@ -11,7 +18,9 @@ const ActivityNavigation = ({phase, activities, activityHandler}) => {
                             backgroundColor: isActive ? 'orange' : ''
                         }
                     }
-                } onClick={() => activityHandler(activity.id)}>{activity.name}</NavLink>
+                } onClick={() => activityHandler(activity.id)} key={activity.id}>
+                    {/* {(phase == 7) ? activity.name.replace("2A", "2B") : activity.name}</NavLink> */}
+                    {activity.name}</NavLink>
             ))}
         </div>
     );

@@ -37,7 +37,9 @@ const StepNavigationBar = ({steps, phase, activity}) => {
             {/* {stepId === 'checklist' && <Checklist checklist={checklist} checkHandler={checkHandler} />} */}
             <div className="resources">
                 {stepId === 'checklist' && <ChecklistContent phaseId={phase} activityId={activity} />}
-                {stepId !== 'checklist' && stepId != 0 && <StepContent id={`${phase}.${activity}.${currentStep}`} />}
+                {stepId !== 'checklist' && (phase !== 2 && phase !== 7) && stepId != 0 && <StepContent id={`${phase}.${activity}.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId != 0 && phase === 2 && <StepContent id={`${phase}A.${activity}.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId != 0 && phase === 7 && <StepContent id={`${phase}B.${activity}.${currentStep}`} />}
                 {stepId !== '0' && <Resources />}
             </div>
         </div>

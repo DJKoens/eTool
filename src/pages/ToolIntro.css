@@ -1,7 +1,49 @@
-.introContent h2 {
-    padding: 0 20px;
+.introContent {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.introContent a {
+    color: black;
 }
 
 .introContent p {
-    padding: 0 20px;
+    font-size: large;
+}
+
+.introContent .homeToolStructure{
+    display: flex;
+}
+
+.introContent .figure1 {
+    display: flexbox;
+    margin: 10px;
+}
+
+.introContent .figure1 img {
+    min-width: 100%;
+    min-height: 90%;
+    margin: 0 10px;
+}
+
+.introContent .figure1 h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.introContent table {
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+.introContent table td {
+    border: 1px solid gray;
+    padding: 12px;
+}
+
+.introContent table img {
+    min-width: 80%;
+    min-height: 80%;
 }

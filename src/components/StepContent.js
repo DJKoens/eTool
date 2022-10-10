@@ -26,21 +26,14 @@ const StepContent = ({id}) => {
         {isPending && <div>Loading...</div>}
         {content && <div>
             {content.data.stepCollection.items.map((step) => (
-                (step.id == id && <div>
+                (step.id == id && <div key={step.id}>
                     <h2>Step {step.id} - {step.title}</h2>
                     <h3>Responsible: {step.responsible}</h3>
-                    {step.shortDescription.json.content.map((item) => (
-                        <RichText {...item} />
+                    {step.shortDescription.json.content.map((item, index) => (
+                        <RichText {...item} key={index}/>
                     ))}
                 </div>)
             ))}
-
-
-          {/* <h2>{content.data.stepCollection.items[0].title}</h2>
-          <h3>{content.data.stepCollection.items[0].responsible}</h3>
-          {content.data.stepCollection.items[0].shortDescription.json.content.map((item) => (
-              <RichText {...item} />
-          ))} */}
           </div>}
       </div>
     );

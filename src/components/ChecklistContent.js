@@ -107,15 +107,15 @@ const ChecklistContent = ({phaseId, activityId}) => {
             ))} */}
             {content.data.phaseCollection.items.filter(phase => phase.phaseId === phaseId).map((phase) => (
                 phase.activitiesCollection.items.filter(activity => activity.id === activityId).map((activity) => (
-                  activity.checklist.questionsCollection.items.map((question) => (
-                    <div>
+                  activity.checklist.questionsCollection.items.map((question, index) => (
+                    <div key={index}>
                       {checkStepTitle(question.stepTitle) &&
                         <h3>{question.stepTitle}</h3>
                       }
                       {question.subQuestionTitle && <p>
                         {question.subQuestionTitle}  
-                        {question.questionItems.map((item) => (
-                          <label><input type="checkbox" onInput={(e) => handleCheckbox(e)} required />{item}</label>
+                        {question.questionItems.map((item, subIndex) => (
+                          <label key={subIndex}><input type="checkbox" onInput={(e) => handleCheckbox(e)} required />{item}</label>
                         ))}
                       </p>}
                       {!question.subQuestionTitle && 
