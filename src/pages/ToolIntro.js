@@ -1,4 +1,5 @@
 import './ToolIntro.css';
+import { Link } from 'react-router-dom';
 import Abbreviation from '../components/Abbreviation';
 import PhaseItemIntro from '../components/PhaseItemIntro';
 import overallFlowchart from '../media/home/Overall flowchart.jpg';
@@ -125,7 +126,7 @@ const ToolIntro = () => {
             <p>A more elaborate explanation of the Activities and Steps, and how they interrelate, is provided in the introduction of each Phase.</p>
 
             <h3>Next Step</h3>
-            <p>Read the <a href="/instructions">instructions</a> for using the tool</p>
+            <p>Read the <Link to="/instructions">instructions</Link> for using the tool</p>
         </div>
     );
 }
