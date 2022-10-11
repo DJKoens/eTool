@@ -10,15 +10,7 @@ const Resources = ({steps}) => {
           items {
             title
             url
-            linkedFrom {
-              entryCollection {
-                items {
-                  sys {
-                    id
-                  }
-                }
-              }
-            }
+            description
           }
         }
       }
@@ -30,25 +22,14 @@ const Resources = ({steps}) => {
         <div className="CardContainer">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
+            <h2>Resources</h2>
             {content && content.data.assetCollection.items.map((asset) => (
-                <ResourceFile title={asset.title} url={asset.url} />
-                // asset.linkedFrom.entryCollection.items.map((entry) => (
-                //     steps.map((step) => (
-                //         <>
-                //         {<ResourceFile title={asset.title} url={asset.url} entryId={entry.sys.id} stepId={step.id} />}
-                //         </>
-                //     ))
-                // ))
+                <>
+                {steps.map((step) => (
+                    (step.id == asset.description) && <ResourceFile title={asset.title} url={asset.url} />
+                ))}
+                </>
             ))}
-
-            {/* {content && content.data.assetCollection.items.map((item) => (
-                <div>
-                    {item.linkedFrom.entryCollection.items.map((entry) => (
-                        <ResourceFile title={item.title} url={item.url} entryId={entry.sys.id} steps={steps}/>
-                    ))}
-                </div>
-            ))} */}
-
         </div>
     );
 }

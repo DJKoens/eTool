@@ -1,7 +1,6 @@
 import useContent from '../useContent.js';
-import RichTextRecursive from './RichTextRecursive.js';
 
-const InlineAsset = ({id, newComponent}) => {
+const InlineAsset = ({id}) => {
 
     const query = `
     {
@@ -19,9 +18,6 @@ const InlineAsset = ({id, newComponent}) => {
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {content && <a href={content.data.asset.url}>{content.data.asset.title}</a>}
-            {content && newComponent.map((component) => (
-                <RichTextRecursive {...component} />
-            ))}
         </span>
     );
 }
