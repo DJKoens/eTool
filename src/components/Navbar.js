@@ -4,13 +4,18 @@ import logo from '../media/FIND_Logo_small.png';
 import searchIcon from '../media/search_icon.png';
 
 const Navbar = () => {
+
+    const handleSearch = (e) => {
+        window.location.href="/resources/" + document.getElementById('resourceSearch').value
+    }
+
     return ( 
         <nav className="navbar">
             <img src={logo} alt="FIND Logo" />
             <h1>Guidance for establishing a National Essential Diagnostics List</h1>
             <div className="contentSearch">
-                <input type="text" placeholder='Search for resources' />
-                <input type="image" src={searchIcon}/>
+                <input type="text" id="resourceSearch" placeholder='Search for resources'/>
+                <input type="image" src={searchIcon} onClick={handleSearch}/>
             </div>
             <div className="links">
                 <Link to="/tool">Home</Link>

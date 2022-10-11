@@ -6,6 +6,7 @@ import Acknowledgements from './pages/Acknowledgements';
 import ToolStart from './pages/ToolStart';
 import ToolIntro from './pages/ToolIntro';
 import GlossaryPage from './pages/GlossaryPage';
+import ResourceQuery from './components/ResourceQuery';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/tool/phase/:phaseId/activity/:activityId/step/:stepId" element={<ToolStart />} />
             <Route path="/glossary" element={<GlossaryPage />} />
             <Route path="/acknowledgements" element={<Acknowledgements />} />
+            <Route path="/resources/:resourceQuery" element={<ResourceQuery />} />
           </Routes>
         </div>
       </div>

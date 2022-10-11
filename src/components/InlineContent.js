@@ -25,7 +25,6 @@ const InlineContent = ({id, newComponent}) => {
         <span className="inlineContent">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
-            {/* {content && content.data.glossaryItem && <span className='tooltip' data-tooltip={content.data.glossaryItem.meaning}>{content.data.glossaryItem.abbreviation}</span>} */}
             {content && content.data.glossaryItem && <Abbreviation abbreviation={content.data.glossaryItem.abbreviation} meaning={content.data.glossaryItem.meaning} />}
             {content && content.data.activity && <a href="">{content.data.activity.name}</a>}
             {content && content.data.step && <a href="">{content.data.step.id}</a>}
