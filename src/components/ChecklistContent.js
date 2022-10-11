@@ -47,7 +47,7 @@ const ChecklistContent = ({phaseId, activityId}) => {
 
     const query = `
     {
-        phaseCollection(limit:6) {
+        phaseCollection(limit:7) {
           items{
             phaseId
             activitiesCollection(limit:10) {
@@ -87,11 +87,11 @@ const ChecklistContent = ({phaseId, activityId}) => {
                       {question.subQuestionTitle && <p>
                         {question.subQuestionTitle}  
                         {question.questionItems.map((item, subIndex) => (
-                          <label key={subIndex}><input checked={checkMap[`${index}-${subIndex}`]} id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />{item}</label>
+                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />{item}</label>
                         ))}
                       </p>}
                       {!question.subQuestionTitle && 
-                        <label key={index}><input checked={checkMap[`${index}--`]} id={`${index}--`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
+                        <label key={index}><input id={`${index}--`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
                       }
                     </div>
                   ))

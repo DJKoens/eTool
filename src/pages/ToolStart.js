@@ -16,7 +16,7 @@ const ToolStart = () => {
 
     const query = `
     {
-        phaseCollection(limit:6) {
+        phaseCollection(limit:7) {
           items{
             phaseId
             name
@@ -24,7 +24,7 @@ const ToolStart = () => {
             generalIntroduction {
                 json
             }
-            glossaryCollection(limit:5) {
+            glossaryCollection(limit:10) {
               items {
                 glossaryItem
                 info {
@@ -32,7 +32,7 @@ const ToolStart = () => {
                 }
               }
             }
-            activitiesCollection(limit:5) {
+            activitiesCollection(limit:8) {
               items {
                 name
                 subTitle
