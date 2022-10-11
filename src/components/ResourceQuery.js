@@ -25,8 +25,9 @@ const ResourceQuery = () => {
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             <h1>Search Results for '{resourceQuery}':</h1>
+            <hr />
             {content && content.data.assetCollection.items.filter(item => item.title.toLowerCase().match(resourceQuery.toLowerCase())).map((asset) => (
-                <div className="CardContainer">
+                <div className="CardContainer" key={asset.key}>
                     <ResourceFile title={asset.title} url={asset.url} />
                 </div>
             ))}

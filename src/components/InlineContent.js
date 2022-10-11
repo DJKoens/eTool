@@ -16,18 +16,34 @@ const InlineContent = ({id, newComponent}) => {
         step(id:"${id}"){
             id
         }
+        phase(id:"${id}"){
+            phaseId
+        }
     }
     `
 
     const {content, isPending, error} = useContent(query);
+
+    const getLinkFromActivity = (name) => {
+        var splitLink = name.split(' ')[1].split('.');
+        var phaseId = (splitLink[0].length > 1 && splitLink[1] == 'B') ? 7 : splitLink[0][0];
+        return phaseId + "/activity/" + splitLink[1] + "/step/0";
+    }
+
+    const getLinkFromStep = (name) => {
+        var splitLink = name.split('.');
+        var phaseId = (splitLink[0].length > 1 && splitLink[1] == 'B') ? 7 : splitLink[0][0];
+        return phaseId + "/activity/" + splitLink[1] + "/step/" + splitLink[2];
+    }
 
     return ( 
         <span className="inlineContent">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {content && content.data.glossaryItem && <Abbreviation abbreviation={content.data.glossaryItem.abbreviation} meaning={content.data.glossaryItem.meaning} />}
-            {content && content.data.activity && <a href="">{content.data.activity.name}</a>}
-            {content && content.data.step && <a href="">{content.data.step.id}</a>}
+            {content && content.data.phase && <a href={`/tool/phase/${content.data.phase.phaseId}/activity/0/step/0`}>Phase {content.data.phase.phaseId}</a>}
+            {content && content.data.activity && <a href={`/tool/phase/${getLinkFromActivity(content.data.activity.name)}`}>{content.data.activity.name}</a>}
+            {content && content.data.step && <a href={`/tool/phase/${getLinkFromStep(content.data.step.id)}`}>{content.data.step.id}</a>}
             {content && newComponent.map((component) => (
                 <RichTextRecursive {...component} />
             ))}

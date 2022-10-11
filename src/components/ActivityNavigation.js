@@ -18,9 +18,7 @@ const ActivityNavigation = ({phase, activities, activityHandler}) => {
                             backgroundColor: isActive ? 'orange' : ''
                         }
                     }
-                } onClick={() => activityHandler(activity.id)} key={activity.id}>
-                    {/* {(phase == 7) ? activity.name.replace("2A", "2B") : activity.name}</NavLink> */}
-                    {activity.name}</NavLink>
+                } onClick={() => activityHandler(activity.id)} key={activity.id}>{activity.name}</NavLink>
             ))}
         </div>
     );

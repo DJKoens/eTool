@@ -73,12 +73,12 @@ const ToolStart = () => {
             {content && 
                 <div className="startContent">
                     <div className="phases">
-                        <PhaseStartItem phaseId={1} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem phaseId={2} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem phaseId={3} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem phaseId={4} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem phaseId={5} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem phaseId={6} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={1} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={2} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={3} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={4} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={5} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={6} progress={0} activityHandler={handleActivity}/>
                     </div>
 
                     {content.data.phaseCollection.items.filter(phase => phase.phaseId == phaseId).map((phase) => (

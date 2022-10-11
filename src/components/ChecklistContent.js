@@ -4,37 +4,31 @@ import "./Checklist.css";
 
 let progress = 0;
 let maxQuestions = 0;
-let stepTitles = [];
+var checkMap = {'progress': progress};
 
-// const checkStepTitle = (title) => {
-//   console.log("Checking title: " + title);
-//   if (stepTitles.includes(title)){
-//     console.log("Included");
-//     return false;
-//   }
-//   console.log("Not included");
-//   stepTitles.push(title);
-//   return true;
-// }
+let stepTitles = [];
+let phaseStorageID = 0;
 
 function checkStepTitle(title) {
-  console.log("Checking title: " + title);
   if (stepTitles.includes(title)){
-    console.log("Included");
     return false;
   }
-  console.log("Not included");
   stepTitles.push(title);
   return true;
 }
 
-const handleCheckbox = (e, handler) => {
+const handleCheckbox = (e) => {
     if (e.target.checked) {
         progress += 1;
     } else {
         progress -= 1;
     }
-    handler(progress, maxQuestions);
+
+    if (checkMap == null) checkMap={'progress': progress};
+    checkMap['progress'] = progress;
+    checkMap[e.target.id] = e.target.checked;
+    localStorage.setItem(`checksPhase${phaseStorageID}`, JSON.stringify(checkMap));
+    console.log(checkMap);
 }
 
 const handleChecklistSubmit = (e) => {
@@ -45,8 +39,10 @@ const handleChecklistSubmit = (e) => {
 const ChecklistContent = ({phaseId, activityId}) => {
 
   useEffect(() => {
-    //?
     stepTitles = [];
+    phaseStorageID = phaseId;
+    checkMap = {'progress': progress};
+    checkMap = JSON.parse(localStorage.getItem(`checksPhase${phaseStorageID}`));
   })
 
     const query = `
@@ -75,36 +71,12 @@ const ChecklistContent = ({phaseId, activityId}) => {
 
     const {content, isPending, error} = useContent(query);
 
-    // if (!(maxQuestions > 0)){
-    //     checklist.map((checks) => (
-    //         maxQuestions += checks.questions.length
-    //     ));
-    // }
-
     return (
         <form className='CardContainer' onSubmit={handleChecklistSubmit}>
             <h2>Checklist</h2>
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {content && <div>
-            {/* {content.data.phaseCollection.items.filter(phase => phase.phaseId === phaseId).map((phase) => (
-                phase.activitiesCollection.items.filter(activity => activity.id === activityId).map((activity) => (
-                  activity.checklist.questionsCollection.items.map((question) => (
-                    <div>
-                      <h3>{question.stepTitle}</h3>
-                      {question.subQuestionTitle && <p>
-                        {question.subQuestionTitle}  
-                        {question.questionItems.map((item) => (
-                          <label><input type="checkbox" onInput={(e) => handleCheckbox(e)} required />{item}</label>
-                        ))}
-                      </p>}
-                      {!question.subQuestionTitle && 
-                        <label><input type="checkbox" onInput={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
-                      }
-                    </div>
-                  ))
-                ))
-            ))} */}
             {content.data.phaseCollection.items.filter(phase => phase.phaseId === phaseId).map((phase) => (
                 phase.activitiesCollection.items.filter(activity => activity.id === activityId).map((activity) => (
                   activity.checklist.questionsCollection.items.map((question, index) => (
@@ -115,11 +87,11 @@ const ChecklistContent = ({phaseId, activityId}) => {
                       {question.subQuestionTitle && <p>
                         {question.subQuestionTitle}  
                         {question.questionItems.map((item, subIndex) => (
-                          <label key={subIndex}><input type="checkbox" onInput={(e) => handleCheckbox(e)} required />{item}</label>
+                          <label key={subIndex}><input checked={checkMap[`${index}-${subIndex}`]} id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />{item}</label>
                         ))}
                       </p>}
                       {!question.subQuestionTitle && 
-                        <label><input type="checkbox" onInput={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
+                        <label key={index}><input checked={checkMap[`${index}--`]} id={`${index}--`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
                       }
                     </div>
                   ))

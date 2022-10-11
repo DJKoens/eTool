@@ -7,12 +7,15 @@ const Instructions = () => {
             <p><strong>It is important to keep in mind that this tool provides the ideal pathway for development and implementation of an NEDL. 
                 Countries can always decide to deviate from or amend the Activities to fit country-specific context and customs.</strong>
             </p>
+            <div className="CardContainer">
             <h3>Sections of the tool</h3>
             <p>
                 The main component of this tool is the stepwise NEDL development and implementation roadmap. 
                 In addition, this tool provides a section with instructions on how to use the tool (this section), 
                 a glossary of terms used throughout the tool, and a further reading section with links to literature and guidelines for additional information on NEDL development and implementation.
             </p>
+            </div>
+            <div className="CardContainer">
             <h3>Stepwise NEDL development and implementation roadmap</h3>
             <p>
                 The stepwise NEDL development and implementation roadmap is divided into six Phases. 
@@ -72,6 +75,8 @@ const Instructions = () => {
                 Sometimes Activities will take more time, but you can still decide to continue with the next Activity/-ies. 
                 Also, sometimes Phases (2A and 2B) or Activities (in Phase 5) can be performed in parallel. 
             </p>
+            </div>
+            <div className="CardContainer">
             <h3>Additional features</h3>
             <p>
                 This tool contains some additional features aside from the stepwise NEDL development and implementation roadmap.
@@ -101,6 +106,7 @@ const Instructions = () => {
             <p>
                 This section acknowledges the contributions of the funders, developers, and reviewers of the tool.
             </p>
+            </div>
         </div>
     );
 }

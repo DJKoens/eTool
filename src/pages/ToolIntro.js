@@ -125,7 +125,7 @@ const ToolIntro = () => {
             <p>A more elaborate explanation of the Activities and Steps, and how they interrelate, is provided in the introduction of each Phase.</p>
 
             <h3>Next Step</h3>
-            <p>Read the <a href='/instructions'>instructions</a> for using the tool</p>
+            <p>Read the <a href="/instructions">instructions</a> for using the tool</p>
         </div>
     );
 }
