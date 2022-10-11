@@ -1,7 +1,10 @@
 .CardContainer {
     margin: 18px 10px;
+    display: block;
+    justify-content: center;
+    flex: 1;
 }
 
-.CardContainer a {
-    margin: 10px;
+.resourceCard {
+    flex: 0.3;
 }

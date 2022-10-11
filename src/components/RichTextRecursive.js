@@ -31,7 +31,11 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
         {nodeType === "text" && value && <>{value}</>}
         {nodeType === "entry-hyperlink" && content.map((newComponent, index) => (
             //eslint-disable-next-line
-            <a key={index} href="" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}><RichTextRecursive {...newComponent} /></a>
+            <a key={index} href={data.uri} onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}><RichTextRecursive {...newComponent} /></a>
+        ))}
+        {nodeType === "hyperlink" && content.map((newComponent, index) => (
+            //eslint-disable-next-line
+            <a key={index} href={data.uri} onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}><RichTextRecursive {...newComponent} /></a>
         ))}
         {nodeType === "embedded-entry-inline" && <InlineContent id={data.target.sys.id} newComponent={content} />}
         {nodeType === "asset-hyperlink" && <InlineAsset id={data.target.sys.id} />}

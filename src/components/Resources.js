@@ -19,7 +19,7 @@ const Resources = ({steps}) => {
     const {content, isPending, error} = useContent(query);
 
     return (
-        <div className="CardContainer">
+        <div className="CardContainer resourceCard">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             <h2>Resources</h2>

@@ -70,6 +70,7 @@ const ChecklistContent = ({phaseId, activityId}) => {
       `;
 
     const {content, isPending, error} = useContent(query);
+    // checkMap['progress'] = progress;
 
     return (
         <form className='CardContainer' onSubmit={handleChecklistSubmit}>

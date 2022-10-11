@@ -107,6 +107,7 @@ const ToolStart = () => {
                             {activity != 0 && <div>
                                 {phase.activitiesCollection.items.filter(a => a.id == activity).map((activity) => (
                                     <div key={activity.id}>
+                                        <div className="activityContent">
                                         <h2>{activity.name}: {activity.subTitle}</h2>
                                         <h3>Aim: </h3>
                                         <p>{activity.aim.json.content.map((aim, index) => (
@@ -116,6 +117,7 @@ const ToolStart = () => {
                                         <p>{activity.description.json.content.map((description, index) => (
                                             <RichTextRecursive {...description} key={index}/>
                                         ))}</p>
+                                        </div>
 
                                         <StepNavigationBar steps={activity.stepsCollection.items} phase={phase.phaseId} activity={activity.id} />
                                     </div>
