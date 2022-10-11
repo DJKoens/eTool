@@ -1,5 +1,6 @@
 import InlineAsset from "./InlineAsset";
 import InlineContent from "./InlineContent";
+import InlineImage from "./InlineImage";
 
 const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
 
@@ -34,7 +35,7 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
         ))}
         {nodeType === "embedded-entry-inline" && <InlineContent id={data.target.sys.id} newComponent={content} />}
         {nodeType === "asset-hyperlink" && <InlineAsset id={data.target.sys.id} />}
-        {nodeType === "embedded-asset-block" && <InlineAsset id={data.target.sys.id} newComponent={content} />}
+        {nodeType === "embedded-asset-block" && <InlineImage id={data.target.sys.id} newComponent={content} />}
         </>
     )
 }

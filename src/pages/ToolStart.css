@@ -44,3 +44,7 @@
     border-radius: 10px;
     background-color: whitesmoke;
 }
+
+.introGloss img {
+    min-width: 50%;
+}

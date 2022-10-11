@@ -24,7 +24,7 @@ const ToolStart = () => {
             generalIntroduction {
                 json
             }
-            glossaryCollection(limit:10) {
+            glossaryCollection(limit:15) {
               items {
                 glossaryItem
                 info {
@@ -73,7 +73,7 @@ const ToolStart = () => {
             {content && 
                 <div className="startContent">
                     <div className="phases">
-                        <PhaseStartItem activePhase = {phaseId} phaseId={1} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={1} progress={40} activityHandler={handleActivity}/>
                         <PhaseStartItem activePhase = {phaseId} phaseId={2} progress={0} activityHandler={handleActivity}/>
                         <PhaseStartItem activePhase = {phaseId} phaseId={3} progress={0} activityHandler={handleActivity}/>
                         <PhaseStartItem activePhase = {phaseId} phaseId={4} progress={0} activityHandler={handleActivity}/>
