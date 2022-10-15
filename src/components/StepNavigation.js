@@ -2,7 +2,7 @@ import './StepNavigation.css';
 import { NavLink, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import StepContent from './StepContent';
-import ChecklistContent from './ChecklistContent';
+import ChecklistContent2 from './ChecklistContent2';
 import Resources from './Resources';
 
 const StepNavigationBar = ({steps, phase, activity}) => {
@@ -36,7 +36,8 @@ const StepNavigationBar = ({steps, phase, activity}) => {
             <hr />
             {/* {stepId === 'checklist' && <Checklist checklist={checklist} checkHandler={checkHandler} />} */}
             <div className="resources">
-                {stepId === 'checklist' && <ChecklistContent phaseId={phase} activityId={activity} />}
+                {/* {stepId === 'checklist' && <ChecklistContent phaseId={phase} activityId={activity} />} */}
+                {stepId === 'checklist' && <ChecklistContent2 phaseId={phase} activityId={activity} />}
                 {stepId !== 'checklist' &&
                 (phase !== 2 && phase !== 7) &&
                 (phase !== 5) &&

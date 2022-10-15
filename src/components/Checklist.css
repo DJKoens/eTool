@@ -7,10 +7,16 @@ form input {
     top: -1px;
 }
 
+form p {
+    display: inline;
+    margin-left: 6px;
+}
+
 form label {
     display: block;
     padding-left: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
     text-indent: -15px;
 }
 

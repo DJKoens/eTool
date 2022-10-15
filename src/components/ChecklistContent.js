@@ -15,7 +15,8 @@ function checkStepTitle(title) {
     return false;
   }
   stepTitles.push(title);
-  return true;
+  console.log("New Title: " + title);
+  return <h3>{title}</h3>;
 }
 
 const handleCheckbox = (e) => {
@@ -108,19 +109,23 @@ const ChecklistContent = ({phaseId, activityId}) => {
                   // ))
                   activity.checklist.questionsCollection.items.map((question, index) => (
                     <div key={index}>
-                      {checkStepTitle(question.stepTitle) &&
-                        <h3>{question.stepTitle}</h3>
-                      }
+                      {checkStepTitle(question.stepTitle)}
                       {question.subQuestionTitleRich && <p>
                         <RichTextRecursive {...question.subQuestionTitleRich.json.content} />
                         {question.richquestionItemsCollection.items.map((item, subIndex) => (
-                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required /><RichTextRecursive {...item.content.json} /></label>
+                          <label key={subIndex}>
+                            <input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />
+                            <RichTextRecursive {...item.content.json} />
+                          </label>
                         ))}
                       </p>}
                       {!question.subQuestionTitleRich && 
                       <>
                         {question.richquestionItemsCollection.items.map((item, subIndex) => (
-                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/><RichTextRecursive {...item.content.json} /></label>
+                          <label key={subIndex}>
+                            <input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>
+                            <RichTextRecursive {...item.content.json} />
+                          </label>
                         ))}
                         </>
                       }
