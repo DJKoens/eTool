@@ -31,7 +31,7 @@ const Instructions = () => {
             <p>
                 <strong>Step 1: Click on the roadmap to go to a specific Phase. </strong>
             </p>
-            <img src={screenshot1} />
+            <img src={screenshot1} alt="" />
             <p>
                 Each Phase has the same outline: it starts with an introduction that gives an overview of the whole Phase. 
                 Activity buttons are provided directly under the title of the Phase to go to specific Activities in the Phase. 
@@ -46,7 +46,7 @@ const Instructions = () => {
                 and the Activities included in the Phase that lead to this output. 
                 A glossary of terms used in the Phase is also provided. This is followed by series of Step buttons that lead to specific Steps of an Activity. 
             </p>
-            <img src={screenshot2} />
+            <img src={screenshot2} alt="" />
             <p>
                 <strong>Step 3: Click on a Step button. </strong>
             </p>
@@ -54,7 +54,7 @@ const Instructions = () => {
                 Each Step has the same outline: a one-sentence description of the aim of the Step, the entity responsible for implementation of the Step, 
                 and a description of what needs to be done in the Step. On the right-hand side are links to templates of documents or other information sources required to implement the Step.
             </p>
-            <img src={screenshot3} />
+            <img src={screenshot3} alt="" />
             <p>
                 Go to the next Step once the current Step has been implemented. 
                 Either at the end of each Step or when all the Steps of an Activity have been implemented:
@@ -66,7 +66,7 @@ const Instructions = () => {
                  The tool provides checklist questions to verify correct and complete implementation of all the Steps of each Activity. 
                  Progress can be monitored by ticking checklist questions. The Phase button turns green based on the number of checklist questions ticked.
             </p>
-            <img src={screenshot4} />
+            <img src={screenshot4} alt="" />
             <p>
                 When all the Steps of a certain Activity have been completed and the checklist questions have been answered, 
                 go to the next Activity by clicking the button of the next Activity (hence, repeat from Step 2). 
@@ -76,7 +76,7 @@ const Instructions = () => {
                 the Phase button will have turned completely green.
                 Go to the next Phase by clicking the button of the next Phase. Hence, repeat from Step 1.
             </p>
-            <img src={screenshot5} />
+            <img src={screenshot5} alt="" />
             <p>
                 Sometimes Activities will take more time, but you can still decide to continue with the next Activity/-ies. 
                 Also, sometimes Phases (2A and 2B) or Activities (in Phase 5) can be performed in parallel. 
@@ -92,7 +92,7 @@ const Instructions = () => {
                 This tool contains a search function that helps to find specific templates of documents and other resources. To use this, 
                 insert a keyword in the search box and click on the search icon. The search function will only work when you are online.
             </p>
-            <img src={screenshot6} />
+            <img src={screenshot6} alt="" />
             <h3>Abbreviations</h3>
             <p>
                 When hovering over abbreviations in the text, the full meaning of the abbreviation will appear.
@@ -101,7 +101,7 @@ const Instructions = () => {
             <p>
                 This section explains the terms used throughout the tool.
             </p>
-            <img src={screenshot7} />
+            <img src={screenshot7} alt="" />
             <h3>Further reading</h3>
             <p>
                 Whereas links to resources directly required for implementation of a specific Activity are provided next to each Activity, this section contains links to resources that provide additional background information on development, implementation, review, and revision of an NEDL.

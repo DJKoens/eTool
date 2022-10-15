@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import useContent from "../useContent";
 import "./Checklist.css";
+import RichTextRecursive from "./RichTextRecursive";
 
 let progress = 0;
 let maxQuestions = 0;
@@ -54,10 +55,19 @@ const ChecklistContent = ({phaseId, activityId}) => {
               items {
                 id
                 checklist {
-                  questionsCollection {
+                  questionsCollection(limit:10) {
                     items {
-                      questionItems
-                      subQuestionTitle
+                      richquestionItemsCollection(limit:5) {
+                        items {
+                          stepId
+                          content {
+                            json
+                          }
+                        }
+                      }
+                      subQuestionTitleRich {
+                        json
+                      }
                       stepTitle
                     }
                   }
@@ -80,19 +90,39 @@ const ChecklistContent = ({phaseId, activityId}) => {
             {content && <div>
             {content.data.phaseCollection.items.filter(phase => phase.phaseId === phaseId).map((phase) => (
                 phase.activitiesCollection.items.filter(activity => activity.id === activityId).map((activity) => (
+                  // activity.checklist.questionsCollection.items.map((question, index) => (
+                  //   <div key={index}>
+                  //     {checkStepTitle(question.stepTitle) &&
+                  //       <h3>{question.stepTitle}</h3>
+                  //     }
+                  //     {question.subQuestionTitle && <p>
+                  //       {question.subQuestionTitle}  
+                  //       {question.questionItems.map((item, subIndex) => (
+                  //         <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />{item}</label>
+                  //       ))}
+                  //     </p>}
+                  //     {!question.subQuestionTitle && 
+                  //       <label key={index}><input id={`${index}--`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
+                  //     }
+                  //   </div>
+                  // ))
                   activity.checklist.questionsCollection.items.map((question, index) => (
                     <div key={index}>
                       {checkStepTitle(question.stepTitle) &&
                         <h3>{question.stepTitle}</h3>
                       }
-                      {question.subQuestionTitle && <p>
-                        {question.subQuestionTitle}  
-                        {question.questionItems.map((item, subIndex) => (
-                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required />{item}</label>
+                      {question.subQuestionTitleRich && <p>
+                        <RichTextRecursive {...question.subQuestionTitleRich.json.content} />
+                        {question.richquestionItemsCollection.items.map((item, subIndex) => (
+                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required /><RichTextRecursive {...item.content.json} /></label>
                         ))}
                       </p>}
-                      {!question.subQuestionTitle && 
-                        <label key={index}><input id={`${index}--`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/>{question.questionItems[0]}</label>
+                      {!question.subQuestionTitleRich && 
+                      <>
+                        {question.richquestionItemsCollection.items.map((item, subIndex) => (
+                          <label key={subIndex}><input id={`${index}-${subIndex}`} type="checkbox" onChange={(e) => handleCheckbox(e)} required/><RichTextRecursive {...item.content.json} /></label>
+                        ))}
+                        </>
                       }
                     </div>
                   ))
