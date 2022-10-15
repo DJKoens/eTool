@@ -1,7 +1,12 @@
 {
   "files": {
     "main.css": "/eTool/static/css/main.b995eee1.css",
-    "main.js": "/eTool/static/js/main.61a7eb24.js",
+    "main.js": "/eTool/static/js/main.8162a877.js",
+    "static/media/Instructions screenshot 7.jpg": "/eTool/static/media/Instructions screenshot 7.151d4c9c8c4a4f9829fb.jpg",
+    "static/media/Instructions screenshot 1.jpg": "/eTool/static/media/Instructions screenshot 1.19e355203f50cfa08f0a.jpg",
+    "static/media/Instructions screenshot 4.jpg": "/eTool/static/media/Instructions screenshot 4.fcf4b5383b4aa75f374f.jpg",
+    "static/media/Instructions screenshot 2.jpg": "/eTool/static/media/Instructions screenshot 2.216c978d31fda39df192.jpg",
+    "static/media/Instructions screenshot 3.jpg": "/eTool/static/media/Instructions screenshot 3.40c5dfe4ba6804d93738.jpg",
     "static/media/Phase 5 flowchart.jpg": "/eTool/static/media/Phase 5 flowchart.3ee5138095c38f495b34.jpg",
     "static/media/Overall flowchart.jpg": "/eTool/static/media/Overall flowchart.6b58c691d2316c7b8a25.jpg",
     "static/media/Phase 3 flowchart.jpg": "/eTool/static/media/Phase 3 flowchart.3df8a7e47163795a2381.jpg",
@@ -9,12 +14,13 @@
     "static/media/Phase 1 flowchart.jpg": "/eTool/static/media/Phase 1 flowchart.88fc6e6c10eb923b40f1.jpg",
     "static/media/Phase 2 flowchart.jpg": "/eTool/static/media/Phase 2 flowchart.56bf4b9c55df493f6e2c.jpg",
     "static/media/Phase 6 flowchart.jpg": "/eTool/static/media/Phase 6 flowchart.6fdf8bd8eee6c14b967f.jpg",
+    "static/media/Instructions screenshot 5.jpg": "/eTool/static/media/Instructions screenshot 5.e15c1f63aadd29147fda.jpg",
     "index.html": "/eTool/index.html",
     "main.b995eee1.css.map": "/eTool/static/css/main.b995eee1.css.map",
-    "main.61a7eb24.js.map": "/eTool/static/js/main.61a7eb24.js.map"
+    "main.8162a877.js.map": "/eTool/static/js/main.8162a877.js.map"
   },
   "entrypoints": [
     "static/css/main.b995eee1.css",
-    "static/js/main.61a7eb24.js"
+    "static/js/main.8162a877.js"
   ]
 }
