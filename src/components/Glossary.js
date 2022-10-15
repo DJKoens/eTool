@@ -12,8 +12,8 @@ const Glossary = ({glossaryItems}) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {glossaryItems && glossaryItems.map((item) => (
-                        <tr key={item.glossaryItem}>
+                    {glossaryItems && glossaryItems.map((item, index) => (
+                        <tr key={item.glossaryItem + `-${index}`}>
                             <td>{item.glossaryItem}</td>
                             <td>
                                 {item.info.json.content.map((infoItem, index) => (

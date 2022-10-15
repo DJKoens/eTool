@@ -15,8 +15,8 @@ const InlineImage = ({id}) => {
     
     return (
         <>
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading...</div>}
+            {error && <>{error}</>}
+            {isPending && <>Loading...</>}
             {content && <img src={content.data.asset.url} alt={content.data.asset.title}/>}
         </>
     );

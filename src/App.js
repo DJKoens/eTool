@@ -6,7 +6,7 @@ import Acknowledgements from './pages/Acknowledgements';
 import ToolStart from './pages/ToolStart';
 import ToolIntro from './pages/ToolIntro';
 import GlossaryPage from './pages/GlossaryPage';
-import ResourceQuery from './components/ResourceQuery';
+import ResourceQuery from './pages/ResourceQuery';
 
 function App() {
   return (

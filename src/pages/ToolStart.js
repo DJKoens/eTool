@@ -110,13 +110,13 @@ const ToolStart = () => {
                                         <div className="activityContent">
                                         <h2>{activity.name}: {activity.subTitle}</h2>
                                         <h3>Aim: </h3>
-                                        <p>{activity.aim.json.content.map((aim, index) => (
+                                        <div>{activity.aim.json.content.map((aim, index) => (
                                             <RichTextRecursive {...aim} key={index}/>
-                                        ))}</p>
+                                        ))}</div>
                                         <h3>Description: </h3>
-                                        <p>{activity.description.json.content.map((description, index) => (
+                                        <div>{activity.description.json.content.map((description, index) => (
                                             <RichTextRecursive {...description} key={index}/>
-                                        ))}</p>
+                                        ))}</div>
                                         </div>
 
                                         <StepNavigationBar steps={activity.stepsCollection.items} phase={phase.phaseId} activity={activity.id} />

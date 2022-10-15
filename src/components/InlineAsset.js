@@ -15,8 +15,8 @@ const InlineAsset = ({id}) => {
 
     return (
         <span>
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading...</div>}
+            {error && <>{error}</>}
+            {isPending && <>Loading...</>}
             {content && <a href={content.data.asset.url}>{content.data.asset.title}</a>}
         </span>
     );

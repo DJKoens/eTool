@@ -38,10 +38,10 @@ const InlineContent = ({id, newComponent}) => {
 
     return ( 
         <span className="inlineContent">
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading...</div>}
+            {error && <>{error}</>}
+            {isPending && <>Loading...</>}
             {content && content.data.glossaryItem && <Abbreviation abbreviation={content.data.glossaryItem.abbreviation} meaning={content.data.glossaryItem.meaning} />}
-            {content && content.data.phase && <a href={`/tool/phase/${content.data.phase.phaseId}/activity/0/step/0`}>Phase {content.data.phase.phaseId}</a>}
+            {content && content.data.phase && <a href={`/tool/phase/${content.data.phase.phaseId}/activity/0/step/0`}>Phase {(content.data.phase.phaseId == 2) ? "2A" : "2B"}</a>}
             {content && content.data.activity && <a href={`/tool/phase/${getLinkFromActivity(content.data.activity.name)}`}>{content.data.activity.name}</a>}
             {content && content.data.step && <a href={`/tool/phase/${getLinkFromStep(content.data.step.id)}`}>{content.data.step.id}</a>}
             {content && newComponent.map((component) => (

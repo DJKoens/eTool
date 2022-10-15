@@ -18,17 +18,27 @@ const Resources = ({steps}) => {
 
     const {content, isPending, error} = useContent(query);
 
+    const loadResource = (asset) => {
+      // Return a resource file for every resource that is part of any of the given steps
+      for (var i = 0; i < steps.length; i++){
+        if (asset.description != null){
+          const assetSteps = asset.description.split('-');
+          for (var assetStepId = 0; assetStepId < assetSteps.length; assetStepId++){
+            if (assetSteps[assetStepId] === steps[i].id) {
+              return <ResourceFile title={asset.title} url={asset.url} />
+            }
+          }
+        }
+      }
+    }
+
     return (
         <div className="CardContainer resourceCard">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             <h2>Resources</h2>
             {content && content.data.assetCollection.items.map((asset) => (
-                <>
-                {steps.map((step) => (
-                    (step.id == asset.description) && <ResourceFile title={asset.title} url={asset.url} />
-                ))}
-                </>
+              loadResource(asset)
             ))}
         </div>
     );
