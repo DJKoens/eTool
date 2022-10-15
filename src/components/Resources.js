@@ -25,7 +25,7 @@ const Resources = ({steps}) => {
           const assetSteps = asset.description.split('-');
           for (var assetStepId = 0; assetStepId < assetSteps.length; assetStepId++){
             if (assetSteps[assetStepId] === steps[i].id) {
-              return <ResourceFile title={asset.title} url={asset.url} />
+              return <ResourceFile title={asset.title} url={asset.url} key={asset.url} />
             }
           }
         }

@@ -19,9 +19,11 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
     return (
         <>
         {nodeType === "table" && <table>
-            {content.map((newComponent, index) => (
-                <RichTextRecursive {...newComponent} key={index} />
-            ))}    
+            <tbody>
+                {content.map((newComponent, index) => (
+                    <RichTextRecursive {...newComponent} key={index} />
+                ))} 
+            </tbody>   
         </table>}
         {nodeType === "table-row" && <tr>
             {content.map((newComponent, index) => (
