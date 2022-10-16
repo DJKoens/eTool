@@ -12,7 +12,6 @@ const ToolStart = () => {
 
     const {phaseId, activityId} = useParams();
     const [activity, setActivity] = useState(activityId);
-    // const [step, setStep] = useState(stepId);
 
     const query = `
     {
@@ -73,12 +72,12 @@ const ToolStart = () => {
             {content && 
                 <div className="startContent">
                     <div className="phases">
-                        <PhaseStartItem activePhase = {phaseId} phaseId={1} progress={40} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={2} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={3} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={4} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={5} progress={0} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={6} progress={0} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={1} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={2} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={3} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={4} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={5} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase = {phaseId} phaseId={6} activityHandler={handleActivity}/>
                     </div>
 
                     {content.data.phaseCollection.items.filter(phase => phase.phaseId == phaseId).map((phase) => (
