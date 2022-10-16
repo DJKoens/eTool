@@ -1,7 +1,7 @@
 import {NavLink} from 'react-router-dom';
 import './ActivityNavigation.css';
 
-const ActivityNavigation = ({phase, activities, activityHandler}) => {
+const ActivityNavigation = ({phase, activities, activityHandler, currentActivity}) => {
     return (
         <div className="activityNavigation">
             {/* Extra phase button for phase 2A & 2B */}
@@ -16,10 +16,8 @@ const ActivityNavigation = ({phase, activities, activityHandler}) => {
             {/* Activity Buttons */}
             {activities.map((activity) => (
                 <NavLink to={`/tool/phase/${phase}/activity/${activity.id}/step/0`} style={
-                    ({isActive}) => {
-                        return {
-                            backgroundColor: isActive ? 'orange' : ''
-                        }
+                    {
+                        backgroundColor: (currentActivity == activity.id) ? 'orange' : ''
                     }
                 } onClick={() => activityHandler(activity.id)} key={activity.id}>{activity.name}</NavLink>
             ))}

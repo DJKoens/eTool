@@ -88,7 +88,7 @@ const ToolStart = () => {
                     {content.data.phaseCollection.items.filter(phase => phase.phaseId == phaseId).map((phase) => (
                         <div className="introGloss" key={phase.phaseId}>
                             <h2 className='CardContainer subTitle'>{phase.subTitle}</h2>
-                            <ActivityNavigation phase={phaseId} activities={phase.activitiesCollection.items} activityHandler={handleActivity}/>
+                            <ActivityNavigation phase={phaseId} activities={phase.activitiesCollection.items} activityHandler={handleActivity} currentActivity={activity}/>
                             {(phaseId == 2 || phaseId == 7) && <div>
                                 {/* Place an extra activity navigation item when there is a subphase needed */}
                                 {content.data.phaseCollection.items.filter(phase => phase.phaseId == ((phaseId == 2) ? 7 : 2)).map((subPhase) => (
