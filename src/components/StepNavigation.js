@@ -6,7 +6,7 @@ import ChecklistContent from './ChecklistContent';
 import Resources from './Resources';
 import useContent from '../useContent';
 
-const StepNavigationBar = ({steps, phase, activity}) => {
+const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
 
     const {stepId} = useParams();
     const [currentStep, setStep] = useState(stepId);
@@ -65,7 +65,7 @@ const StepNavigationBar = ({steps, phase, activity}) => {
             
             {stepId === 'checklist' && content.data.phaseCollection.items.filter(phaseItem => phaseItem.phaseId === phase).map((phaseItem) => (
                 phaseItem.activitiesCollection.items.filter(activityItem => activityItem.id === activity).map((activityItem) => (
-                    <ChecklistContent phaseId={phase} activityId={activity} checklistId={activityItem.checklist.sys.id} key={`Checklist_${phase}_${activity}`} />
+                    <ChecklistContent phaseId={phase} activityId={activity} checklistId={activityItem.checklist.sys.id} key={`Checklist_${phase}_${activity}`} phaseUpdater={phaseUpdater} />
                 ))
             ))
             }

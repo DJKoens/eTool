@@ -2,7 +2,7 @@ import useContent from "../useContent";
 import "./Checklist.css";
 import RichTextRecursive from "./RichTextRecursive";
 
-const ChecklistContent = ({checklistId}) => {
+const ChecklistContent = ({checklistId, phaseUpdater}) => {
 
   const query = `
     {
@@ -48,6 +48,7 @@ const ChecklistContent = ({checklistId}) => {
       }
       
       localStorage.setItem(`checks:${checklistId}`, JSON.stringify(checks));
+      phaseUpdater();
     }
 
     const createSubQuestion = (question, categoryIndex, questionIndex) => {

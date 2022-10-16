@@ -12,6 +12,11 @@ const ToolStart = () => {
 
     const {phaseId, activityId} = useParams();
     const [activity, setActivity] = useState(activityId);
+    const [phaseUpdater, updatePhase] = useState(false);
+
+    const phaseUpdate = () => {
+        updatePhase(!phaseUpdater);
+    }
 
     const query = `
     {
@@ -72,12 +77,12 @@ const ToolStart = () => {
             {content && 
                 <div className="startContent">
                     <div className="phases">
-                        <PhaseStartItem activePhase = {phaseId} phaseId={1} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={2} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={3} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={4} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={5} activityHandler={handleActivity}/>
-                        <PhaseStartItem activePhase = {phaseId} phaseId={6} activityHandler={handleActivity}/>
+                        <PhaseStartItem activePhase={phaseId} phaseId={1} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={2} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={3} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={4} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={5} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={6} activityHandler={handleActivity} />
                     </div>
 
                     {content.data.phaseCollection.items.filter(phase => phase.phaseId == phaseId).map((phase) => (
@@ -118,7 +123,7 @@ const ToolStart = () => {
                                         ))}</div>
                                         </div>
 
-                                        <StepNavigationBar steps={activity.stepsCollection.items} phase={phase.phaseId} activity={activity.id} />
+                                        <StepNavigationBar steps={activity.stepsCollection.items} phase={phase.phaseId} activity={activity.id} phaseUpdater={phaseUpdate}/>
                                     </div>
                                 ))}
                             </div>}
