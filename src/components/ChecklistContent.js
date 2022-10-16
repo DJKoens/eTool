@@ -52,20 +52,19 @@ const ChecklistContent = ({checklistId}) => {
 
     const createSubQuestion = (question, categoryIndex, questionIndex) => {
         return <>
-        <h3>{question.stepTitle}</h3>
         {question.subQuestionTitleRich.json.content.map((subTitle, subTitleIndex) => (
             <RichTextRecursive {...subTitle} key={`${subTitle}-${subTitleIndex}`} />
         ))}
         {question.richquestionItemsCollection.items.map((subQuestion, subQuestionId) => (
-            subQuestion.content.json.content.map((subItem, subIndex) => (
-                <label key={`${subIndex}-${subQuestion.stepId}-${subQuestionId}`}>
-                    <input id={`input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`} type="checkbox"
-                    onChange={(e) => handleCheckChange(e, `input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`)}
-                    defaultChecked={checks.find(c => (c.id === `input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`) && c.checked)}
-                    required />
-                    <RichTextRecursive {...subItem} />
-                </label>
-            ))
+            <label key={`${subQuestion.stepId}-${subQuestionId}`}>
+              <input id={`input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`} type="checkbox" className="subQuestion"
+              onChange={(e) => handleCheckChange(e, `input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`)}
+              defaultChecked={checks.find(c => (c.id === `input-c${categoryIndex}-q${questionIndex}-s${subQuestionId}`) && c.checked)}
+              required />
+              {subQuestion.content.json.content.map((subItem, subIndex) => (
+                <RichTextRecursive {...subItem} key={`text${subQuestionId}-${subIndex}`} />
+              ))}
+            </label>
         ))}
         </>
     }
@@ -83,17 +82,18 @@ const ChecklistContent = ({checklistId}) => {
                         <div key={`category${catIndex}_question_${questionIndex}`}>
                           {/* Question keys are build up like this: 'input-c[Question category]-q[Question number]-s[SubQuestion]' */}
                             {question.subQuestionTitleRich && createSubQuestion(question, catIndex, questionIndex)}
-                            {!question.subQuestionTitleRich && question.richquestionItemsCollection.items.map((item, itemIndex) => (
+                            {!question.subQuestionTitleRich && 
+                            <label>
+                              <input id={`input-c${catIndex}-q${questionIndex}-s0`} type="checkbox"
+                              onChange={(e) => handleCheckChange(e, `input-c${catIndex}-q${questionIndex}-s0`)}
+                              defaultChecked={checks.find(c => (c.id === `input-c${catIndex}-q${questionIndex}-s0`) && c.checked)}
+                              required />
+                              {question.richquestionItemsCollection.items.map((item, itemIndex) => (
                                 item.content.json.content.map((text, textIndex) => (
-                                    <label key={`${questionIndex}-${itemIndex}-${textIndex}`}>
-                                        <input id={`input-c${catIndex}-q${questionIndex}-s0`} type="checkbox" 
-                                        onChange={(e) => handleCheckChange(e, `input-c${catIndex}-q${questionIndex}-s0`)} 
-                                        defaultChecked={checks.find(c => (c.id === `input-c${catIndex}-q${questionIndex}-s0`) && c.checked)}
-                                        required />
-                                        <RichTextRecursive {...text} />
-                                    </label>
+                                  <RichTextRecursive {...text} key={`text-${itemIndex}-${textIndex}`} />
                                 ))
-                            ))}
+                              ))}
+                            </label>}
                         </div>
                     ))}
                 </div>

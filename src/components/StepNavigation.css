@@ -51,3 +51,9 @@
 .resources {
     display: flex;
 }
+
+.resources a {
+    text-decoration: bold;
+    font-weight: lighter;
+    color: black;
+}

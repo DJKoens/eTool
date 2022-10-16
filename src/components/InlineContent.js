@@ -49,8 +49,8 @@ const InlineContent = ({id, newComponent}) => {
     }
 
     return ( 
-        <span className="inlineContent">
-            {error && <>{error}</>}
+        <>
+        {error && <>{error}</>}
             {isPending && <>Loading...</>}
             {content && content.data.glossaryItem && <Abbreviation abbreviation={content.data.glossaryItem.abbreviation} meaning={content.data.glossaryItem.meaning} />}
             {content && content.data.phase && <a href={`/tool/phase/${content.data.phase.phaseId}/activity/0/step/0`}>Phase {(content.data.phase.phaseId == 2) ? "2A" : "2B"}</a>}
@@ -59,7 +59,7 @@ const InlineContent = ({id, newComponent}) => {
             {content && newComponent.map((component) => (
                 <RichTextRecursive {...component} />
             ))}
-        </span>
+        </>
     );
 }
  

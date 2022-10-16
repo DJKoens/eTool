@@ -57,8 +57,7 @@ const PhaseStartItem = ({activePhase, phaseId, activityHandler}) => {
     return (
         <div className="phase" style={{
             background: (progress === 0) ? 'rgb(255, 65, 65)' : `linear-gradient(90deg, #59d85f ${Math.min(progress, 100)}%, rgb(255, 65, 65) ${Math.min(progress + 20, 100)}%)`,
-            border: ((activePhase == phaseId) || (activePhase == 7 && phaseId == 2)) ? '6px double black' : '',
-            backgroundClip: 'padding-box'
+            border: ((activePhase == phaseId) || (activePhase == 7 && phaseId == 2)) ? '6px double black' : ''
             }}>
 
             <Link to={`/tool/phase/${phaseId}/activity/0/step/0`} key={phaseId} onClick={() => activityHandler(0)}>

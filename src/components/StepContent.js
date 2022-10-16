@@ -1,5 +1,5 @@
 import useContent from '../useContent.js';
-import RichText from './RichTextRecursive';
+import RichText from './RichTextRecursive.js';
 
 const StepContent = ({id}) => {
 

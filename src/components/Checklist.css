@@ -7,6 +7,10 @@ form input {
     top: -1px;
 }
 
+form div div{
+    margin-bottom: 6px;
+}
+
 form p {
     display: inline;
     margin-left: 6px;
@@ -27,6 +31,14 @@ form input[type="submit"] {
     font-size: x-large;
 }
 
-.checks h3 {
-    margin: 12px 0;
+form h3 {
+    margin-bottom: 12px 0;
+}
+
+.subQuestion {
+    margin-left: 18px;
+}
+
+li p {
+    margin-left: 20px;
 }
