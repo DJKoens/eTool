@@ -24,16 +24,28 @@ const InlineContent = ({id, newComponent}) => {
 
     const {content, isPending, error} = useContent(query);
 
+    const getFifthActivityId = (activity) => {
+        if (activity == '1') return '1';
+        if (activity == '2A') return '2';
+        if (activity == '2B') return '3';
+        if (activity == '2C') return '4';
+        if (activity == '3A') return '5';
+        if (activity == '3B') return '6';
+        if (activity == '4') return '7';
+    }
+
     const getLinkFromActivity = (name) => {
         var splitLink = name.split(' ')[1].split('.');
-        var phaseId = (splitLink[0].length > 1 && splitLink[1] == 'B') ? 7 : splitLink[0][0];
-        return phaseId + "/activity/" + splitLink[1] + "/step/0";
+        var activityId = (splitLink[1].length > 1) ? getFifthActivityId(splitLink[1]) : splitLink[1];
+        var phaseId = (splitLink[0].length > 1 && splitLink[0][1] == 'B') ? 7 : splitLink[0][0];
+        return phaseId + "/activity/" + activityId + "/step/0";
     }
 
     const getLinkFromStep = (name) => {
         var splitLink = name.split('.');
-        var phaseId = (splitLink[0].length > 1 && splitLink[1] == 'B') ? 7 : splitLink[0][0];
-        return phaseId + "/activity/" + splitLink[1] + "/step/" + splitLink[2];
+        var activityId = (splitLink[0] == '5') ? getFifthActivityId(splitLink[1]) : splitLink[1];
+        var phaseId = (splitLink[0].length > 1 && splitLink[0][1] == 'B') ? 7 : splitLink[0][0];
+        return phaseId + "/activity/" + activityId + "/step/" + splitLink[2];
     }
 
     return ( 

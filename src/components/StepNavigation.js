@@ -4,11 +4,34 @@ import { useState } from 'react';
 import StepContent from './StepContent';
 import ChecklistContent2 from './ChecklistContent2';
 import Resources from './Resources';
+import useContent from '../useContent';
 
 const StepNavigationBar = ({steps, phase, activity}) => {
 
     const {stepId} = useParams();
     const [currentStep, setStep] = useState(stepId);
+
+    const query = `
+    {
+        phaseCollection(limit:8) {
+          items{
+            phaseId
+            activitiesCollection(limit:10) {
+              items {
+                id
+                checklist {
+                  sys {
+                    id
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+
+    const {content, isPending, error} = useContent(query);
 
     return (
         <div>
@@ -35,9 +58,20 @@ const StepNavigationBar = ({steps, phase, activity}) => {
 
             <hr />
             {/* {stepId === 'checklist' && <Checklist checklist={checklist} checkHandler={checkHandler} />} */}
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {content && 
             <div className="resources">
+            
+            {stepId === 'checklist' && content.data.phaseCollection.items.filter(phaseItem => phaseItem.phaseId === phase).map((phaseItem) => (
+                phaseItem.activitiesCollection.items.filter(activityItem => activityItem.id === activity).map((activityItem) => (
+                    <ChecklistContent2 phaseId={phase} activityId={activity} checklistId={activityItem.checklist.sys.id} key={`Checklist_${phase}_${activity}`} />
+                ))
+            ))
+            }
+
                 {/* {stepId === 'checklist' && <ChecklistContent phaseId={phase} activityId={activity} />} */}
-                {stepId === 'checklist' && <ChecklistContent2 phaseId={phase} activityId={activity} />}
+                {/* {stepId === 'checklist' && <ChecklistContent2 phaseId={phase} activityId={activity} />} */}
                 {stepId !== 'checklist' &&
                 (phase !== 2 && phase !== 7) &&
                 (phase !== 5) &&
@@ -54,7 +88,7 @@ const StepNavigationBar = ({steps, phase, activity}) => {
                 {stepId !== 'checklist' && stepId != 0 && phase === 5 && activity === 6 && <StepContent id={`${phase}.3B.${currentStep}`} />}
                 {stepId !== 'checklist' && stepId != 0 && phase === 5 && activity === 7 && <StepContent id={`${phase}.4.${currentStep}`} />}
                 {stepId !== '0' && <Resources steps={steps}/>}
-            </div>
+            </div>}
         </div>
     );
 }
