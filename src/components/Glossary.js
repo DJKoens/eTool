@@ -4,6 +4,7 @@ import RichTextRecursive from './RichTextRecursive';
 const Glossary = ({glossaryItems}) => {
     return (
         <div className="glossary">
+            {glossaryItems.length > 0 &&
             <table>
                 <thead>
                 <tr>
@@ -24,7 +25,11 @@ const Glossary = ({glossaryItems}) => {
                     ))}
                 </tbody>
             </table>
-        </div>
+            }
+            {glossaryItems.length == 0 &&
+            <h4>No glossary items</h4>
+            }
+        </div>      
     );
 }
  

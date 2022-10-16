@@ -69,9 +69,6 @@ const StepNavigationBar = ({steps, phase, activity}) => {
                 ))
             ))
             }
-
-                {/* {stepId === 'checklist' && <ChecklistContent phaseId={phase} activityId={activity} />} */}
-                {/* {stepId === 'checklist' && <ChecklistContent2 phaseId={phase} activityId={activity} />} */}
                 {stepId !== 'checklist' &&
                 (phase !== 2 && phase !== 7) &&
                 (phase !== 5) &&
