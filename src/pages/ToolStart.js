@@ -107,7 +107,7 @@ const ToolStart = () => {
                             {activity != 0 && <div>
                                 {phase.activitiesCollection.items.filter(a => a.id == activity).map((activity) => (
                                     <div key={activity.id}>
-                                        <div className="activityContent">
+                                     <div className="activityContent">
                                         <h2>{activity.name}: {activity.subTitle}</h2>
                                         <h3>Aim: </h3>
                                         <div>{activity.aim.json.content.map((aim, index) => (
