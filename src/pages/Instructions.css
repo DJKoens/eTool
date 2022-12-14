@@ -5,3 +5,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.instructionContent img {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 50%;
+    display: block;
+    box-shadow: 2px 4px 6px rgba(50, 50, 50, 0.1);
+}

@@ -9,20 +9,55 @@ import phase3Figure from '../media/home/Phase 3 flowchart.jpg';
 import phase4Figure from '../media/home/Phase 4 flowchart.jpg';
 import phase5Figure from '../media/home/Phase 5 flowchart.jpg';
 import phase6Figure from '../media/home/Phase 6 flowchart.jpg';
+import RichTextRecursive from '../components/RichTextRecursive';
+import useContent from '../useContent.js';
 
 const ToolIntro = () => {
+
+    const elementIndex = 0;
+    const query = `
+    {
+        homeElementCollection(order:id_ASC){
+            items {
+                id
+                cardView
+                itemText {
+                    json
+                }
+            }
+        }
+    }
+    `;
+
+    const {content, isPending, error} = useContent(query);
+
     return (
         <div className="introContent">
-            <div className="phases">
-                <PhaseItemIntro phaseId={1} progress={0} />
-                <PhaseItemIntro phaseId={2} progress={0} />
-                <PhaseItemIntro phaseId={3} progress={0} />
-                <PhaseItemIntro phaseId={4} progress={0} />
-                <PhaseItemIntro phaseId={5} progress={0} />
-                <PhaseItemIntro phaseId={6} progress={0} />
-            </div>
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {content && <div>
+                <div className="phases">
+                    <PhaseItemIntro phaseId={1} progress={0} />
+                    <PhaseItemIntro phaseId={2} progress={0} />
+                    <PhaseItemIntro phaseId={7} progress={0} />
+                    <PhaseItemIntro phaseId={3} progress={0} />
+                    <PhaseItemIntro phaseId={4} progress={0} />
+                    <PhaseItemIntro phaseId={5} progress={0} />
+                    <PhaseItemIntro phaseId={6} progress={0} />
+                </div>
 
-            <h1>Homepage</h1>
+                <h1>Introduction to the NEDL e-Tool</h1>
+
+                {/* {content.data.homeElementCollection.items.map((element) => (
+                    <div className={element.cardView ? 'CardContainer' : 'startElement'} key={element.id}>
+                        {element.itemText.json.content.map((item, index) => (
+                            <RichTextRecursive {...item} key={`${element.id}-${index}`} />
+                        ))}
+                    </div>
+                ))} */}
+            </div>}
+
+            
              <div className="CardContainer">
              <p><b>
              Welcome to the Foundation for Innovative New Diagnostics (<Abbreviation meaning={'Foundation for Innovative New Diagnostics'} abbreviation={'FIND'} />)

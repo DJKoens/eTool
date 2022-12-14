@@ -79,6 +79,7 @@ const ToolStart = () => {
                     <div className="phases">
                         <PhaseStartItem activePhase={phaseId} phaseId={1} activityHandler={handleActivity} />
                         <PhaseStartItem activePhase={phaseId} phaseId={2} activityHandler={handleActivity} />
+                        <PhaseStartItem activePhase={phaseId} phaseId={7} activityHandler={handleActivity} />
                         <PhaseStartItem activePhase={phaseId} phaseId={3} activityHandler={handleActivity} />
                         <PhaseStartItem activePhase={phaseId} phaseId={4} activityHandler={handleActivity} />
                         <PhaseStartItem activePhase={phaseId} phaseId={5} activityHandler={handleActivity} />
@@ -91,15 +92,15 @@ const ToolStart = () => {
                             <ActivityNavigation phase={phaseId} activities={phase.activitiesCollection.items} activityHandler={handleActivity} currentActivity={activity}/>
                             {(phaseId == 2 || phaseId == 7) && <div>
                                 {/* Place an extra activity navigation item when there is a subphase needed */}
-                                {content.data.phaseCollection.items.filter(phase => phase.phaseId == ((phaseId == 2) ? 7 : 2)).map((subPhase) => (
+                                {/* {content.data.phaseCollection.items.filter(phase => phase.phaseId == ((phaseId == 2) ? 7 : 2)).map((subPhase) => (
                                     <ActivityNavigation key={subPhase.phaseId} phase={subPhase.phaseId} activities={subPhase.activitiesCollection.items} activityHandler={handleActivity} />
-                                ))}
+                                ))} */}
                             </div>}
                             <hr />
                             {/* Check if there is an activity selected, if so show the activity information. Otherwise show the Phase information */}
                             {activity == 0 && <div>
                                 <h3>General introduction:</h3>
-                                <div>
+                                <div className='phaseIntro'>
                                     {phase.generalIntroduction.json.content.map((item, index) => (
                                         <RichTextRecursive {...item} key={index} />
                                     ))}

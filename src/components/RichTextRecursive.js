@@ -56,12 +56,12 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
             ))}
         </p> }
         {nodeType === "text" && value && textComponent(value)}
-        {nodeType === "entry-hyperlink" && <a href={data.uri} onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
+        {nodeType === "entry-hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
             {content.map((newComponent, index) => (
                 <RichTextRecursive {...newComponent} key={index} />
             ))}    
         </a>}
-        {nodeType === "hyperlink" && <a href={data.uri} onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
+        {nodeType === "hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
             {content.map((newComponent, index) => (
                 <RichTextRecursive {...newComponent} key={index} />
             ))}    

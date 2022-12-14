@@ -29,7 +29,7 @@ const PhaseStartItem = ({activePhase, phaseId, activityHandler}) => {
     const [progress, setProgress] = useState(0);
     
     const checklists = [];
-    const totalQuestions = {phase1: 44, phase2: 59, phase3: 62, phase4: 49, phase5: 44, phase6: 29};
+    const totalQuestions = {phase1: 44, phase2: 60, phase3: 62, phase4: 49, phase5: 44, phase6: 29, phase7: 72};
 
     const countQuestions = () => {
         let subProgress = 0;
@@ -46,7 +46,8 @@ const PhaseStartItem = ({activePhase, phaseId, activityHandler}) => {
                 }
             }
         }
-        if(subProgress != 0) setProgress((subProgress / totalQuestions[`phase${(phaseId === 7) ? 2 : phaseId}`]) * 100)
+        // if(subProgress != 0) setProgress((subProgress / totalQuestions[`phase${(phaseId === 7) ? 2 : phaseId}`]) * 100)
+        if(subProgress != 0) setProgress((subProgress / totalQuestions[`phase${phaseId}`]) * 100)
         return;
     }
 
@@ -57,11 +58,12 @@ const PhaseStartItem = ({activePhase, phaseId, activityHandler}) => {
     return (
         <div className="phase" style={{
             background: (progress === 0) ? 'rgb(255, 65, 65)' : `linear-gradient(90deg, #59d85f ${Math.min(progress, 100)}%, rgb(255, 65, 65) ${Math.min(progress + 20, 100)}%)`,
-            border: ((activePhase == phaseId) || (activePhase == 7 && phaseId == 2)) ? '6px double black' : ''
+            // border: ((activePhase == phaseId) || (activePhase == 7 && phaseId == 2)) ? '6px double black' : ''
+            border: (activePhase == phaseId) ? '6px double black' : ''
             }}>
 
             <Link to={`/tool/phase/${phaseId}/activity/0/step/0`} key={phaseId} onClick={() => activityHandler(0)}>
-                <p>Phase {phaseId}</p>
+                <p>Phase {(phaseId == 7 || phaseId == 2) ? ((phaseId == 2) ? '2A' : '2B') : phaseId}</p>
             </Link>
         </div>
     );

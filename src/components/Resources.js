@@ -2,7 +2,7 @@ import './Resources.css';
 import ResourceFile from './ResourceFile';
 import useContent from '../useContent';
 
-const Resources = ({steps}) => {
+const Resources = ({steps, activeStep}) => {
 
     const query = `
     {
@@ -24,7 +24,7 @@ const Resources = ({steps}) => {
         if (asset.description != null){
           const assetSteps = asset.description.split('-');
           for (var assetStepId = 0; assetStepId < assetSteps.length; assetStepId++){
-            if (assetSteps[assetStepId] === steps[i].id) {
+            if (assetSteps[assetStepId] === steps[i].id && assetSteps[assetStepId].slice(-1) === activeStep) {
               return <ResourceFile title={asset.title} url={asset.url} key={asset.url} />
             }
           }

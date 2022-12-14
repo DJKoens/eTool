@@ -5,6 +5,7 @@ import StepContent from './StepContent';
 import ChecklistContent from './ChecklistContent';
 import Resources from './Resources';
 import useContent from '../useContent';
+import { useEffect } from 'react';
 
 const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
 
@@ -33,12 +34,30 @@ const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
 
     const {content, isPending, error} = useContent(query);
 
+    useEffect(() => {
+      if (stepId != 0){
+        // Scroll to the steps
+        scrollToSteps(null);
+      }
+    });
+
+    const scrollToSteps = (stepId) => {
+      if (stepId) {
+        setStep(stepId);
+      }
+
+      const element = document.getElementById('stepResources');
+      if (element) {
+        element.scrollIntoView({behavior: 'smooth'});
+      }
+    }
+
     return (
-        <div>
+        <div id='stepNavigationBar'>
             <div className="stepNavigation">
                 {steps.map((step) => (
                     <div className="stepBarItem" key={step.id}>
-                        <NavLink to={`/tool/phase/${phase}/activity/${activity}/step/${step.id[step.id.length - 1]}`} onClick={() => setStep(step.id[step.id.length - 1])} style={
+                        <NavLink to={`/tool/phase/${phase}/activity/${activity}/step/${step.id[step.id.length - 1]}`} onClick={() => scrollToSteps(step.id[step.id.length - 1])} style={
                 ({isActive}) => {
                     return {
                         backgroundColor: isActive ? 'orange' : ''
@@ -53,7 +72,7 @@ const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
                         backgroundColor: isActive ? 'orange' : ''
                     }
                 }
-            }>Checklist</NavLink>
+            } onClick={scrollToSteps}>Checklist</NavLink>
             </div>
 
             <hr />
@@ -61,7 +80,7 @@ const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {content && 
-            <div className="resources">
+            <div id='stepResources' className="resources">
             
             {stepId === 'checklist' && content.data.phaseCollection.items.filter(phaseItem => phaseItem.phaseId === phase).map((phaseItem) => (
                 phaseItem.activitiesCollection.items.filter(activityItem => activityItem.id === activity).map((activityItem) => (
@@ -84,7 +103,7 @@ const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
                 {stepId !== 'checklist' && stepId != 0 && phase === 5 && activity === 5 && <StepContent id={`${phase}.3A.${currentStep}`} />}
                 {stepId !== 'checklist' && stepId != 0 && phase === 5 && activity === 6 && <StepContent id={`${phase}.3B.${currentStep}`} />}
                 {stepId !== 'checklist' && stepId != 0 && phase === 5 && activity === 7 && <StepContent id={`${phase}.4.${currentStep}`} />}
-                {stepId !== '0' && <Resources steps={steps}/>}
+                {stepId !== '0' && <Resources steps={steps} activeStep={stepId}/>}
             </div>}
         </div>
     );
