@@ -26,7 +26,7 @@ const Glossary = ({glossaryItems}) => {
                 </tbody>
             </table>
             }
-            {glossaryItems.length == 0 &&
+            {glossaryItems.length === 0 &&
             <h4>No glossary items</h4>
             }
         </div>      

@@ -10,8 +10,8 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
 
     const textComponent = (text) =>{
         for (let index = 0; index < marks.length; index++) {
-            if (marks[index].type == "bold") return <b>{text}</b>
-            if (marks[index].type == "underline") return <u>{text}</u>
+            if (marks[index].type === "bold") return <b>{text}</b>
+            if (marks[index].type === "underline") return <u>{text}</u>
         }
         return <>{text}</>;
     }
@@ -56,12 +56,12 @@ const RichTextRecursive = ({nodeType, data, content, value, marks}) => {
             ))}
         </p> }
         {nodeType === "text" && value && textComponent(value)}
-        {nodeType === "entry-hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
+        {nodeType === "entry-hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}} rel="noreferrer">
             {content.map((newComponent, index) => (
                 <RichTextRecursive {...newComponent} key={index} />
             ))}    
         </a>}
-        {nodeType === "hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}}>
+        {nodeType === "hyperlink" && <a href={data.uri} target="_blank" onClick={(e) => {entryLinkHandler(e, data.target.sys.id)}} rel="noreferrer">
             {content.map((newComponent, index) => (
                 <RichTextRecursive {...newComponent} key={index} />
             ))}    

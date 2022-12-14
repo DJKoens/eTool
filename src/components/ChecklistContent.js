@@ -33,6 +33,7 @@ const ChecklistContent = ({checklistId, phaseUpdater}) => {
 
     const {content, isPending, error} = useContent(query);
 
+    // eslint-disable-next-line no-array-constructor
     const checks = (localStorage.getItem(`checks:${checklistId}`) != null) ? [...JSON.parse(localStorage.getItem(`checks:${checklistId}`))] : new Array();
 
     const handleCheckChange = (event, id) => {

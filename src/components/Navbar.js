@@ -6,8 +6,8 @@ import searchIcon from '../media/search_icon.png';
 const Navbar = () => {
 
     const handleSearch = (e) => {
-        if (e.type == 'click' || (e.type == 'keydown' && e.key == 'Enter')){
-            if (document.getElementById('resourceSearch').value != ''){
+        if (e.type === 'click' || (e.type === 'keydown' && e.key === 'Enter')){
+            if (document.getElementById('resourceSearch').value !== ''){
                 window.location.href="/resources/" + document.getElementById('resourceSearch').value;
                 document.getElementById('resourceSearch').value = '';
             }
@@ -20,7 +20,7 @@ const Navbar = () => {
             <h1>Guidance for establishing a National Essential Diagnostics List</h1>
             <div className="contentSearch">
                 <input type="text" id="resourceSearch" placeholder='Search for resources' onKeyDown={handleSearch}/>
-                <input type="image" src={searchIcon} onClick={handleSearch}/>
+                <input type="image" src={searchIcon} alt='SearchIcon' onClick={handleSearch}/>
             </div>
             <div className="links">
                 <Link to="/tool">Home</Link>

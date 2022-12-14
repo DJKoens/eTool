@@ -1,5 +1,4 @@
 import useContent from '../useContent.js';
-import RichTextRecursive from './RichTextRecursive.js';
 import RichText from './RichTextRecursive.js';
 
 const StepContent = ({id}) => {
@@ -30,7 +29,7 @@ const StepContent = ({id}) => {
         {isPending && <div>Loading...</div>}
         {content && <div>
             {content.data.stepCollection.items.map((step) => (
-                (step.id == id && <div key={step.id}>
+                (step.id === id && <div key={step.id}>
                     <h2>Step {step.id} - {step.title}</h2>
                     {/* <h2>Step {step.id} - {step.titleRich.json.content.map((item, index) => (
                         <RichTextRecursive {...item} key={`${item.id}-${index}`} />

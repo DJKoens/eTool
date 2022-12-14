@@ -9,12 +9,10 @@ import phase3Figure from '../media/home/Phase 3 flowchart.jpg';
 import phase4Figure from '../media/home/Phase 4 flowchart.jpg';
 import phase5Figure from '../media/home/Phase 5 flowchart.jpg';
 import phase6Figure from '../media/home/Phase 6 flowchart.jpg';
-import RichTextRecursive from '../components/RichTextRecursive';
 import useContent from '../useContent.js';
 
 const ToolIntro = () => {
 
-    const elementIndex = 0;
     const query = `
     {
         homeElementCollection(order:id_ASC){

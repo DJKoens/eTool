@@ -17,7 +17,7 @@ const ActivityNavigation = ({phase, activities, activityHandler, currentActivity
             {activities.map((activity) => (
                 <NavLink to={`/tool/phase/${phase}/activity/${activity.id}/step/0`} style={
                     {
-                        backgroundColor: (currentActivity == activity.id) ? 'orange' : ''
+                        backgroundColor: (currentActivity === activity.id) ? 'orange' : ''
                     }
                 } onClick={() => activityHandler(activity.id)} key={activity.id}>{activity.name}</NavLink>
             ))}
