@@ -89,20 +89,20 @@ const StepNavigationBar = ({steps, phase, activity, phaseUpdater}) => {
             ))
             }
                 {stepId !== 'checklist' &&
-                (phase !== 2 && phase !== 7) &&
-                (phase !== 5) &&
+                // (phase !== 2 && phase !== 7) &&
+                (phase !== 6) &&
                 stepId !== 0 && <StepContent id={`${phase}.${activity}.${currentStep}`} />}
                 {/* Phase 2 edge cases */}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 2 && <StepContent id={`${phase}A.${activity}.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 7 && <StepContent id={`${phase-5}B.${activity}.${currentStep}`} />}
-                {/* Phase 5 edge cases */}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 1 && <StepContent id={`${phase}.1.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 2 && <StepContent id={`${phase}.2A.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 3 && <StepContent id={`${phase}.2B.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 4 && <StepContent id={`${phase}.2C.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 5 && <StepContent id={`${phase}.3A.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 6 && <StepContent id={`${phase}.3B.${currentStep}`} />}
-                {stepId !== 'checklist' && stepId !== 0 && phase === 5 && activity === 7 && <StepContent id={`${phase}.4.${currentStep}`} />}
+                {/* {stepId !== 'checklist' && stepId !== 0 && phase === 2 && <StepContent id={`${phase}A.${activity}.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 7 && <StepContent id={`${phase-5}B.${activity}.${currentStep}`} />} */}
+                {/* Phase 6 edge cases */}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 1 && <StepContent id={`${phase}.1.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 2 && <StepContent id={`${phase}.2A.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 3 && <StepContent id={`${phase}.2B.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 4 && <StepContent id={`${phase}.2C.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 5 && <StepContent id={`${phase}.3A.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 6 && <StepContent id={`${phase}.3B.${currentStep}`} />}
+                {stepId !== 'checklist' && stepId !== 0 && phase === 6 && activity === 7 && <StepContent id={`${phase}.4.${currentStep}`} />}
                 {stepId !== '0' && <Resources steps={steps} activeStep={stepId}/>}
             </div>}
         </div>

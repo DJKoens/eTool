@@ -63,7 +63,8 @@ const PhaseStartItem = ({activePhase, phaseId, activityHandler}) => {
             }}>
 
             <Link to={`/tool/phase/${phaseId}/activity/0/step/0`} key={phaseId} onClick={() => activityHandler(0)}>
-                <p>Phase {(phaseId == 7 || phaseId == 2) ? ((phaseId == 2) ? '2A' : '2B') : phaseId}</p>
+                {/* <p>Phase {(phaseId == 7 || phaseId == 2) ? ((phaseId == 2) ? '2A' : '2B') : phaseId}</p> */}
+                <p>Phase {phaseId}</p>
             </Link>
         </div>
     );
