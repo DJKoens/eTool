@@ -1,12 +1,12 @@
 import './Instructions.css';
 import Abbreviation from '../components/Abbreviation';
-import screenshot1 from '../media/instructions/Instructions screenshot 1.png';
-import screenshot2 from '../media/instructions/Instructions screenshot 2.png';
-import screenshot3 from '../media/instructions/Instructions screenshot 3.png';
-import screenshot4 from '../media/instructions/Instructions screenshot 4.png';
-import screenshot5 from '../media/instructions/Instructions screenshot 5.png';
-import screenshot6 from '../media/instructions/Instructions screenshot 6.png';
-import screenshot7 from '../media/instructions/Instructions screenshot 7.png';
+import screenshot1 from '../media/instructions/Instructions_screenshot_1.png';
+import screenshot2 from '../media/instructions/Instructions_screenshot_2.png';
+import screenshot3 from '../media/instructions/Instructions_screenshot_3.png';
+import screenshot4 from '../media/instructions/Instructions_screenshot_4.png';
+import screenshot5 from '../media/instructions/Instructions_screenshot_5.png';
+import screenshot6 from '../media/instructions/Instructions_screenshot_6.png';
+import screenshot7 from '../media/instructions/Instructions_screenshot_7.png';
 
 const Instructions = () => {
     return (
