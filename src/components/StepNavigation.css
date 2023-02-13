@@ -48,6 +48,25 @@
     justify-content: center;
 }
 
+.resources table {
+    border: 1px solid gray;
+}
+
+.resources td {
+    border: 1px solid gray;
+    padding: 2px 8px;
+    vertical-align: top;
+}
+
+.resources th {
+    border: 1px solid gray;
+    font-size: larger;
+    padding: 12px 0;
+    background-color: #2f4050;
+    color: white;
+    font-weight: normal;
+}
+
 .resources {
     display: flex;
 }

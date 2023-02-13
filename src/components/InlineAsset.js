@@ -17,7 +17,7 @@ const InlineAsset = ({id}) => {
         <>
             {error && <>{error}</>}
             {isPending && <>Loading...</>}
-            {content && <a href={content.data.asset.url}>{content.data.asset.title}</a>}
+            {content && <a href={content.data.asset.url} target="_blank" rel='noreferrer'>{content.data.asset.title}</a>}
         </>
     );
 }
